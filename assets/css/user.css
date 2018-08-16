@@ -57,6 +57,7 @@ nav.navbar.navbar-default{
 .navbar-brand span.text-title{
   text-transform:uppercase;
   font-weight:bold;
+  font-size:xx-large;
 }
 
 @media (max-width:767px) {
