@@ -6,7 +6,7 @@ Learning | Sharing | Explore
 
 Visit : [ TECHDEEP ](https://raahoolkumeriya.github.io/)
 
-# Docker Installtion
+# Docker Instalation
 
 ``` docker pull raahoolkumeriya/techdeep-html```
 
