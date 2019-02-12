@@ -2,6 +2,11 @@
 
 Learning | Sharing | Explore
 
-# The WEBSITE is under contruction 
+# Static website
 
 Visit : [ TECHDEEP ](https://raahoolkumeriya.github.io/)
+
+# Docker Installtion
+
+``` docker pull raahoolkumeriya/techdeep-html```
+
