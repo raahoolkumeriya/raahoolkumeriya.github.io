@@ -43,7 +43,7 @@
       font-size: 8rem;
       font-weight: 900;
       margin: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #c0c6e0 0%, #867895 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1;
@@ -63,7 +63,7 @@
     .modern-btn {
       display: inline-block;
       padding: 14px 32px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #c4c5cc 0%, #77717d 100%);
       color: #fff !important;
       text-decoration: none;
       font-weight: bold;
