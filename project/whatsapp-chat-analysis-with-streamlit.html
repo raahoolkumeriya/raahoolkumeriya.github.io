@@ -67,18 +67,47 @@
       margin-top: 3em;
       margin-bottom: 0em;
     }
+    .modern-btn {
+      background: linear-gradient(135deg, #7d7d7e 0%, #535253 100%) !important;
+      color: #fff !important;
+      border-radius: 50px !important;
+      box-shadow: 0 10px 20px rgba(101, 101, 101, 0.2) !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      border: none !important;
+    }
+    .modern-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(101, 101, 101, 0.35) !important;
+      color: #fff !important;
+    }
+    .modern-text-gradient-light {
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .modern-card {
+      border-radius: 16px !important;
+      box-shadow: 0 10px 30px rgba(101, 101, 101, 0.08) !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      border: none !important;
+      padding: 2em;
+      background: #fff;
+    }
+    .modern-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+    }
   </style>
   <link as="script" href="/static/CACHE/js/output.bcb6c45d4c14.js" rel="preload" />
   <div class="ui masthead center aligned" style="flex-grow: 2;">
     <div class="ui center aligned padded grid">
-      <h1 class="ui center massive green header" style="animation:pulse 3s ease-in-out infinite;">Whatsapp Chat Analysis
-        With Streamlit</h1>
+      <h1 class="ui center massive header modern-text-gradient-light">Whatsapp Chat Analysis With Streamlit</h1>
     </div>
     <div class="ui inverted text container horizontal divider">
-      <p class="ui small green header">Sept. 26, 2023, 6:59 p.m.</p>
+      <p class="ui small header modern-text-gradient-light">Sept. 26, 2023, 6:59 p.m.</p>
     </div>
   </div>
-  <div class="ui container">
+  <div class="ui container modern-card" style="margin-top: -3em; position: relative; z-index: 2;">
     <p>Sept. 26, 2023, 6:59 p.m. <i class="icon leanpub"></i>2 min read</p>
     <div class="ui" style="overflow:hidden; max-width: 100%; overflow-wrap: break-word;">
       <h1 dir="auto"><a
@@ -130,9 +159,8 @@
     <div id="disqus_thread"></div>
     <script src="static/CACHE/js/output.2a2a57d59289.js"></script>
   </div>
-  <div style="position:fixed;margin:2em;bottom:0;left:0;animation:flash 2s ease-in-out infinite;z-index:6;"><a
-      class="ui raised segment button" href="../projects.html"
-      style="background: linear-gradient(90deg, rgb(187, 185, 185) 0%, rgb(255, 255, 255) 100%);">project list</a></div>
+  <div style="position:fixed;margin:2em;bottom:0;left:0;z-index:6;"><a
+      class="ui button modern-btn" href="../projects.html">Project List</a></div>
   <div class="ui hidden divider"></div>
   <div class="ui vertical fluid footer"
     style="margin-bottom: 0%; margin-top: 0%; background-color: #dad8d8; color:rgb(66, 65, 65) !important;">

@@ -15,6 +15,59 @@
   <link href="https://raahoolkumeriya.github.io/" rel="canonical" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
   <link href="/static/CACHE/css/output.c933f1618a86.css" rel="stylesheet" type="text/css" />
+  <style>
+    .modern-btn {
+      background: linear-gradient(135deg, #7d7d7e 0%, #535253 100%) !important;
+      color: #fff !important;
+      border-radius: 50px !important;
+      box-shadow: 0 10px 20px rgba(118, 75, 162, 0.2) !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      border: none !important;
+    }
+    .modern-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(118, 75, 162, 0.35) !important;
+      color: #fff !important;
+    }
+    .modern-text-gradient {
+      background: linear-gradient(135deg, #4e4e4f 0%, #222024 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .code-card {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 2em;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(64, 64, 64, 0.2);
+      font-family: 'Fira Code', Consolas, monospace;
+      text-align: left;
+      margin-top: 10%;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .code-card .keyword { color: #569cd6; }
+    .code-card .func { color: #dcdcaa; }
+    .code-card .string { color: #ce9178; }
+    .code-card .icon { color: #d4d4d4 !important; transition: color 0.3s; }
+    .code-card .icon:hover { color: #3b3b3c !important; }
+    
+    .modern-card {
+      border-radius: 16px !important;
+      box-shadow: 0 10px 30px rgba(101, 101, 101, 0.08) !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      border: none !important;
+    }
+    .modern-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+    }
+    .modern-section {
+      padding-top: 6rem;
+      margin-bottom: 4rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -47,14 +100,13 @@
     <div class="ui masthead"><!-- Segment 1 -->
       <div class="ui four column padded grid">
         <div class="ui large screen only eight wide left aligned column">
-          <pre class="ui massive header"
-            style="font-size:2.3em; padding: 5% ;font-family: Courier;margin-top: 10%; color: #005C00">  def about_me():
-      '''
-      Sr. Platform Engineer..
-      I Love working with
-      Automation Ecosystem
-      '''
-      return  <span class="ui icons right link"><a aria-label="github" class="ui item" href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon" style="color: #005C00"></i></a><a aria-hidden="true" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i class="x large icon" style="color: #005C00"></i></a><a aria-hidden="true" class="item" href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon" style="color: #005C00"></i></a><a aria-hidden="true" class="item" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank"><i class="linkedin large icon" style="color: #005C00"></i></a></span></pre>
+          <div class="code-card"><span class="keyword">def</span> <span class="func">about_me</span>():
+    <span class="string">'''
+    Senior Database Platform Engineer.,
+    I ❤️ working with Agentic < O_o > </O_o>
+    Ecosystem 
+    '''</span>
+    <span class="keyword">return</span> <span class="ui icons right link" style="vertical-align: middle; display: inline-block;"><a aria-label="github" class="ui item" href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon"></i></a><a aria-hidden="true" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i class="x large icon"></i></a><a aria-hidden="true" class="item" href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon"></i></a><a aria-hidden="true" class="item" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank"><i class="linkedin large icon"></i></a></span></div>
         </div>
         <div class="ui large screen only eight wide column">
           <div class="six wide right floated column center aligned">
@@ -66,14 +118,13 @@
           <div class="ui equal width center aligned padded grid">
             <div class="row">
               <div class="column">
-                <pre class="ui header"
-                  style="font-size: 1.6em; padding-top: 10px;padding-bottom: 10px; font-family: Courier;color: rgb(61, 61, 61) !important;">def about_me():         
-    '''                  
+                <div class="code-card" style="font-size: 1.2rem; margin-top: 0;"><span class="keyword">def</span> <span class="func">about_me</span>():
+    <span class="string">'''
     Sr. Platform Engineer
-    I Love working with  
-    Automation Ecosystem 
-    '''                  
-    return <span class="ui right link"><a aria-label="github" class="ui item" href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon" style="color: rgb(61, 61, 61) !important;"></i></a><a aria-label="x" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i class="x large icon" style="color: rgb(61, 61, 61) !important;"></i></a><a aria-label="medium" class="item" href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon" style="color: rgb(61, 61, 61) !important;"></i></a><a aria-label="linkedin" class="item" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank"><i class="linkedin large icon" style="color: rgb(61, 61, 61) !important;"></i></a></span></pre>
+    I Love working with
+    Automation Ecosystem
+    '''</span>
+    <span class="keyword">return</span> <span class="ui right link" style="vertical-align: middle; display: inline-block;"><a aria-label="github" class="ui item" href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon"></i></a><a aria-label="x" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i class="x large icon"></i></a><a aria-label="medium" class="item" href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon"></i></a><a aria-label="linkedin" class="item" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank"><i class="linkedin large icon"></i></a></span></div>
               </div>
             </div>
           </div>
@@ -98,20 +149,17 @@
           </div>
         </div>
       </div>
-      <h1 class="ui center aligned icon huge header">About Me</h1>
+      <h1 class="ui center aligned icon huge header modern-text-gradient">About Me</h1>
       <div class="ui text container">
         <div class="ui relaxed three column stackable doubling grid">
           <div class="column"><a href="#projects">
-              <div class="ui fluid button big raised segment"
-                style="background: linear-gradient(90deg, rgb(187, 185, 185) 0%, rgb(255, 255, 255) 100%);">Projects
-              </div>
+              <div class="ui fluid button big modern-btn">Projects</div>
             </a></div>
           <div class="column"><a href="#achievements">
-              <div class="ui fluid button big raised segment">Achievements</div>
+              <div class="ui fluid button big modern-btn">Achievements</div>
             </a></div>
           <div class="column"><a href="#skills">
-              <div class="ui fluid button big raised segment"
-                style="background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(187, 185, 185) 100%);">Skills</div>
+              <div class="ui fluid button big modern-btn">Skills</div>
             </a></div>
         </div>
       </div>
@@ -130,11 +178,11 @@
     </div>
  -->
 
-
+</br>
   </div><!-- Segment 3 -->
-  <div class="ui center aligned" id="projects">
+  <div class="ui center aligned modern-section" id="projects">
     <div class="ui text container" style="padding-top: 0em;">
-      <p class="ui text center aligned header"
+      <p class="ui text center aligned header modern-text-gradient"
         style="font-size: 3em; margin-bottom: 0em;padding-bottom: 0em !important ">Noteworthy Projects</p>
       <div class="ui horizontal divider"><i class="ui code icon"></i></div>
     </div>
@@ -173,17 +221,15 @@
         </div>
       </div>
     </div>
-    <div class="fluid ui buttons" style="padding-top: 0%;"><a class="ui raised segment text container button"
-        href="projects.html"
-        style="background: linear-gradient(200deg, rgb(187, 185, 185) 0%, rgb(255, 255, 255) 100%);">View All
-        Projects</a></div>
+    <div class="fluid ui buttons" style="padding-top: 0%;"><a class="ui text container button modern-btn"
+        href="projects.html">View All Projects</a></div>
   </div>
 
   <!-- Segment 4 -->
 
-  <div class="ui center aligned" id="skills">
+  <div class="ui center aligned modern-section" id="skills">
     <div class="ui text link container">
-      <p class="ui text center aligned header"
+      <p class="ui text center aligned header modern-text-gradient"
         style="font-size: 3em; margin-bottom: 0em;padding-bottom: 0em !important ">Skills &amp; Tools</p>
       <div class="ui horizontal divider"><i class="ui code icon"></i></div>
     </div>
@@ -225,8 +271,8 @@
     </div>
   </div><!-- Segment 5 -->
 
-  <div class="ui text container" id="achievements">
-    <p class="ui text center aligned header" style="font-size: 3em; margin: 0em;padding-bottom: 0em !important ">Awards
+  <div class="ui text container modern-section" id="achievements">
+    <p class="ui text center aligned header modern-text-gradient" style="font-size: 3em; margin: 0em;padding-bottom: 0em !important ">Awards
       and Achievements</p>
     <div class="ui horizontal divider"><i class="ui code icon"></i></div>
   </div>
@@ -236,66 +282,66 @@
         <div class="ui four column padded grid">
           <div class="large screen only sixteen wide column">
             <div class="ui three doubling cards">
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation on Dementia UK 2024 Hackathon</a></div>
                 <div class="ui small bottom right attached label">2024 July</div>
               </div>
-              <div class="card">
-                <div class="card">
+              <div class="card modern-card">
+                <div class="card modern-card">
                   <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation on Oracle Exa-CC Database Migration</a></div>
                   <div class="ui small bottom right attached label">2024 June</div>
                 </div>
                 </div>
-                <div class="card">
+                <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Reward and
                     Recognition Award by Deutsche Bank</a></div>
                 <div class="ui small bottom right attached label">2023 October</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation
                     of the development of a working solution for Hackathon 2023</a></div>
                 <div class="ui small bottom right attached label">2023 July</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation
                     of production release CICD pipeline development</a></div>
                 <div class="ui small bottom right attached label">2023 March</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation
                     on MongoDB reporting automation, Artifact development and delivery tool</a></div>
                 <div class="ui small bottom right attached label">2022 March</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Whatsapp Chat
                     processor featured in the weekly Round-up: Streamlit</a></div>
                 <div class="ui small bottom right attached label">2023 March</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation
                     on MongoDB reporting automation</a></div>
                 <div class="ui small bottom right attached label">2020 November</div>
               </div>
 
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Reward and
                     Recognition Award by Deutsche Bank</a></div>
                 <div class="ui small bottom right attached label">2019 October</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Nominated for
                     India excellence
                     award 2018</a></div>
                 <div class="ui small bottom right attached label">2018 December</div>
               </div>
 
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Bootstrap and
                     feed loading activity</a></div>
                 <div class="ui small bottom right attached label">2014 May</div>
               </div>
 
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Line Follower
                     autobot inter college championship</a></div>
                 <div class="ui tiny bottom right attached label">2011 August</div>
@@ -305,50 +351,50 @@
           </div>
           <div class="tablet only mobile only sixteen wide column">
             <div class="ui one doubling cards">
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Reward and Recognition Award by Deutsche Bank</a></div>
                 <div class="ui small bottom right attached label">2023 October</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Appreciation of the development of a working solution for
                     Hackathon 2023</a></div>
                 <div class="ui small bottom right attached label">2023 July</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Appreciation of production release CICD pipeline
                     development</a></div>
                 <div class="ui small bottom right attached label">2023 March</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Appreciation on Artifact
                     development and delivery tool</a></div>
                 <div class="ui small bottom right attached label">2022 March</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Whatsapp Chat processor featured in the weekly Round-up:
                     Streamlit
                   </a></div>
                 <div class="ui small bottom right attached label">2021 July</div>
               </div>
 
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Appreciation on MongoDB reporting automation</a></div>
                 <div class="ui small bottom right attached label">2020 November</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Reward and Recognition Award by Deutsche Bank</a></div>
                 <div class="ui small bottom right attached label">2019 October</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Nominated for India excellence
                     award 2018</a></div>
                 <div class="ui small bottom right attached label">2018 December</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Bootstrap and feed loading activity</a></div>
                 <div class="ui small bottom right attached label">2014 May</div>
               </div>
-              <div class="card">
+              <div class="card modern-card">
                 <div class="ui big link list"><a class="item">Line Follower autobot inter college championship</a></div>
                 <div class="ui small bottom right attached label">2011 August</div>
               </div>
