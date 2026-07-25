@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  --primary-accent: #2563eb;
+  --secondary-accent: #7c3aed;
+  --pink-accent: #db2777;
+  --emerald-accent: #059669;
+  
+  --accent-gradient: linear-gradient(135deg, #1e40af 0%, #6d28d9 50%, #be185d 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 50%, #db2777 100%);
+  --text-gradient: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  --text-gradient-light: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  --brand-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+
+  --bg-canvas: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+
+  --card-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+  --card-shadow-hover: 0 20px 35px -5px rgba(37, 99, 235, 0.12), 0 10px 15px -3px rgba(124, 58, 237, 0.08);
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 14px;
+  --border-radius-lg: 20px;
+  --border-radius-pill: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-canvas);
+  color: #334155;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .ui.header {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.02em;
+  font-weight: 700 !important;
+}
+
+/* Modern Header Gradients */
+.modern-text-gradient {
+  background: linear-gradient(135deg, #4e4e4f 0%, #222024 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.03em;
+}
+
+.modern-text-gradient-light {
+  background: var(--text-gradient-light);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-heading) !important;
+}
+
+/* Modern Card Container */
+.modern-card {
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(101, 101, 101, 0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  border: none !important;
+  padding: 1.5em !important;
+  background: #ffffff !important;
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Modern Buttons */
+.modern-btn {
+  background: linear-gradient(135deg, #7d7d7e 0%, #535253 100%) !important;
+  color: #ffffff !important;
+  border-radius: 50px !important;
+  box-shadow: 0 10px 20px rgba(101, 101, 101, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  border: none !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  padding: 0.85em 1.75em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5em !important;
+}
+
+.modern-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(101, 101, 101, 0.35) !important;
+  color: #ffffff !important;
+}
+
+/* Header Masthead */
+.masthead {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%) !important;
+  color: #fff;
+  padding: 3em 1em 6em 1em !important;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.masthead::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Navigation Menu styling */
+.ui.secondary.menu .item {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  border-radius: var(--border-radius-pill) !important;
+  transition: all 0.2s ease !important;
+  padding: 0.6em 1.2em !important;
+}
+
+.ui.secondary.menu .item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+.ui.secondary.menu .active.item {
+  background: var(--accent-gradient) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Tags & Labels */
+.ui.label, .ui.tag.label {
+  font-family: var(--font-body) !important;
+  border-radius: var(--border-radius-pill) !important;
+  font-weight: 600 !important;
+  padding: 0.5em 1em !important;
+}
+
+.ui.tag.labels .label, .ui.tag.label {
+  border-radius: var(--border-radius-pill) !important;
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.ui.tag.labels .label:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Company Logos */
+.company-logo {
+  height: 26px !important;
+  width: 26px !important;
+  max-height: 26px !important;
+  max-width: 26px !important;
+  object-fit: contain !important;
+  border-radius: 6px !important;
+  vertical-align: middle !important;
+  margin-right: 8px !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+/* Grey Top Right Date Ribbon Badge */
+.ui.ribbon.label.grey-ribbon, .ui.grey.ribbon.label, .grey-ribbon-right {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%) !important;
+  color: #ffffff !important;
+  border-color: #475569 !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  font-size: 0.78rem !important;
+  padding: 0.35em 0.75em !important;
+  border-radius: 20px !important;
+  box-shadow: 0 2px 8px rgba(71, 85, 105, 0.2) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.3em !important;
+  width: fit-content !important;
+  margin: 0 !important;
+}

@@ -11,61 +11,114 @@
   <meta content="Rahul Kumeriya" name="author" />
   <meta content="sXJlMSTXdk6jtqybrlN1RqGQjVY7RULciRi7Ifo1_Zk" name="google-site-verification" />
   <title>Welcome | Rahul Kumeriya's portfolio</title>
-  <link href="/static/images/favicon.43d06173d002.ico" rel="shortcut icon" type="image/png" />
+  <link href="static/images/favicon.43d06173d002.ico" rel="shortcut icon" type="image/png" />
   <link href="https://raahoolkumeriya.github.io/" rel="canonical" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-  <link href="/static/CACHE/css/output.c933f1618a86.css" rel="stylesheet" type="text/css" />
+  <link href="static/CACHE/css/output.c933f1618a86.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/static/css/modern-theme.css" />
   <style>
     .modern-btn {
       background: linear-gradient(135deg, #7d7d7e 0%, #535253 100%) !important;
       color: #fff !important;
       border-radius: 50px !important;
-      box-shadow: 0 10px 20px rgba(118, 75, 162, 0.2) !important;
+      box-shadow: 0 10px 20px rgba(101, 101, 101, 0.2) !important;
       transition: transform 0.3s ease, box-shadow 0.3s ease !important;
       border: none !important;
     }
+
     .modern-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 25px rgba(118, 75, 162, 0.35) !important;
+      box-shadow: 0 15px 25px rgba(101, 101, 101, 0.35) !important;
       color: #fff !important;
     }
+
     .modern-text-gradient {
       background: linear-gradient(135deg, #4e4e4f 0%, #222024 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .code-card {
-      background: #1e1e1e;
-      color: #d4d4d4;
+      background: #0f172a;
+      color: #f8fafc;
       padding: 2em;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(64, 64, 64, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.4);
       font-family: 'Fira Code', Consolas, monospace;
       text-align: left;
-      margin-top: 10%;
-      font-size: 1.5rem;
+      margin-top: 5%;
+      font-size: 1.35rem;
       line-height: 1.6;
       white-space: pre-wrap;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .code-card .keyword { color: #569cd6; }
-    .code-card .func { color: #dcdcaa; }
-    .code-card .string { color: #ce9178; }
-    .code-card .icon { color: #d4d4d4 !important; transition: color 0.3s; }
-    .code-card .icon:hover { color: #3b3b3c !important; }
-    
+
+    .code-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 60px -10px rgba(101, 101, 101, 0.35);
+    }
+
+    .code-card .keyword {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .code-card .func {
+      color: #facc15;
+      font-weight: 600;
+    }
+
+    .code-card .string {
+      color: #4ade80;
+    }
+
+    .code-card .comment {
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    .code-card .icon {
+      color: #cbd5e1 !important;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .code-card .icon:hover {
+      color: #38bdf8 !important;
+      transform: scale(1.15);
+    }
+
     .modern-card {
       border-radius: 16px !important;
       box-shadow: 0 10px 30px rgba(101, 101, 101, 0.08) !important;
       transition: transform 0.3s ease, box-shadow 0.3s ease !important;
       border: none !important;
+      padding: 1.5em;
+      background: #fff;
     }
+
     .modern-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
     }
+
     .modern-section {
-      padding-top: 6rem;
-      margin-bottom: 4rem;
+      padding-top: 5rem;
+      margin-bottom: 3rem;
+    }
+
+    .company-logo {
+      height: 26px !important;
+      width: 26px !important;
+      max-height: 26px !important;
+      max-width: 26px !important;
+      object-fit: contain !important;
+      border-radius: 6px !important;
+      vertical-align: middle !important;
+      margin-right: 8px !important;
+      display: inline-block !important;
+      flex-shrink: 0 !important;
     }
   </style>
 </head>
@@ -83,15 +136,15 @@
     </div>
     <div class="computer only one column row">
       <div class="column">
-        <div class="ui massive link list secondary menu"><a class="ui active item raised inverted"
-            href="index.html">__codelocked__</a>
+        <div class="ui massive link list secondary menu"><a class="ui active item raised inverted" href="index.html"><i
+              class="terminal icon"></i> __codelocked__</a>
           <div class="right menu"><a class="item inverted" href="projects.html"
               style="animation:flash 1.5s ease-in-out infinite;"><i class="flag green icon"></i>Projects</a><a
-              class="item inverted" href="experience.html">Experience</a><a class="item inverted"
-              href="gist.html">Gist</a><a class="item inverted"
+              class="item inverted" href="experience.html"><i class="phoenix framework icon"></i>Experience</a><a
+              class="item inverted" href="gist.html"><i class="object ungroup icon"></i>Gist</a><a class="item inverted"
               href="https://docs.google.com/document/d/1aeDuwuT_fwPFJxc80L2BTWPmobYejq1lXNL7ccZJt3w/edit?usp=sharing"
-              target="_blank">Resume</a><a class="item inverted"
-              href="https://raahoolkumeriya.github.io/connectme/">Contact</a></div>
+              target="_blank"><i class="file text icon"></i>Resume</a><a class="item inverted"
+              href="https://raahoolkumeriya.github.io/connectme/"><i class="envelope icon"></i>Contact</a></div>
         </div>
       </div>
     </div>
@@ -101,16 +154,23 @@
       <div class="ui four column padded grid">
         <div class="ui large screen only eight wide left aligned column">
           <div class="code-card"><span class="keyword">def</span> <span class="func">about_me</span>():
-    <span class="string">'''
-    Senior Database Platform Engineer.,
-    I ❤️ working with Agentic < O_o > </O_o>
-    Ecosystem 
-    '''</span>
-    <span class="keyword">return</span> <span class="ui icons right link" style="vertical-align: middle; display: inline-block;"><a aria-label="github" class="ui item" href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon"></i></a><a aria-hidden="true" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i class="x large icon"></i></a><a aria-hidden="true" class="item" href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon"></i></a><a aria-hidden="true" class="item" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank"><i class="linkedin large icon"></i></a></span></div>
+            <span class="string">'''
+              Senior Database Platform Engineer.,
+              I ❤️ working with Agentic Ecosystem
+              '''</span>
+            <span class="keyword">return</span> <span class="ui icons right link"
+              style="vertical-align: middle; display: inline-block;"><a aria-label="github" class="ui item"
+                href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon"></i></a><a
+                aria-hidden="true" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i
+                  class="x large icon"></i></a><a aria-hidden="true" class="item"
+                href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon"></i></a><a
+                aria-hidden="true" class="item" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank"><i
+                  class="linkedin large icon"></i></a></span>
+          </div>
         </div>
         <div class="ui large screen only eight wide column">
           <div class="six wide right floated column center aligned">
-            <img
+            <img alt="Developer Activity"
               src="https://raw.githubusercontent.com/raahoolkumeriya/raahoolkumeriya.github.io/87ab6afebb8f2d59f66912d9784c79295d46dee1/static/images/developer_activity.fc9f8bef8cc2.svg?sanitize=true">
           </div>
         </div>
@@ -118,14 +178,23 @@
           <div class="ui equal width center aligned padded grid">
             <div class="row">
               <div class="column">
-                <div class="code-card" style="font-size: 1.2rem; margin-top: 0;"><span class="keyword">def</span> <span class="func">about_me</span>():
-    <span class="string">'''
-    Sr. Database Platform 
-                 Engineer
-    I ❤️ working with 
-    Agentic Ecosystem
-    '''</span>
-    <span class="keyword">return</span> <span class="ui right link" style="vertical-align: middle; display: inline-block;"><a aria-label="github" class="ui item" href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon"></i></a><a aria-label="x" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i class="x large icon"></i></a><a aria-label="medium" class="item" href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon"></i></a><a aria-label="linkedin" class="item" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank"><i class="linkedin large icon"></i></a></span></div>
+                <div class="code-card" style="font-size: 1.1rem; margin-top: 0;"><span class="keyword">def</span> <span
+                    class="func">about_me</span>():
+                  <span class="string">'''
+                    Sr. Database Platform
+                    Engineer
+                    I ❤️ working with
+                    Agentic Ecosystem
+                    '''</span>
+                  <span class="keyword">return</span> <span class="ui right link"
+                    style="vertical-align: middle; display: inline-block;"><a aria-label="github" class="ui item"
+                      href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon"></i></a><a
+                      aria-label="x" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i
+                        class="x large icon"></i></a><a aria-label="medium" class="item"
+                      href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon"></i></a><a
+                      aria-label="linkedin" class="item" href="https://www.linkedin.com/in/rahulkumeriya"
+                      target="_blank"><i class="linkedin large icon"></i></a></span>
+                </div>
               </div>
             </div>
           </div>
@@ -148,32 +217,20 @@
       <div class="ui text container">
         <div class="ui relaxed three column stackable doubling grid">
           <div class="column"><a href="#projects">
-              <div class="ui fluid button big modern-btn">Projects</div>
+              <div class="ui fluid button big modern-btn"><i class="folder open icon"></i> Projects</div>
             </a></div>
           <div class="column"><a href="#achievements">
-              <div class="ui fluid button big modern-btn">Achievements</div>
+              <div class="ui fluid button big modern-btn"><i class="trophy icon"></i> Achievements</div>
             </a></div>
           <div class="column"><a href="#skills">
-              <div class="ui fluid button big modern-btn">Skills</div>
+              <div class="ui fluid button big modern-btn"><i class="code branch icon"></i> Skills</div>
             </a></div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Segment 2 -->
-  <!-- <div class="ui stripe community vertical container">
-    <div class="ui three column center aligned divided very relaxed stackable grid container">
-      <div class="row">
-        <div class="column">
-          <div class="ui image">
-              <img alt="null-image" class="ui small image" src="https://raw.githubusercontent.com/raahoolkumeriya/raahoolkumeriya.github.io/87ab6afebb8f2d59f66912d9784c79295d46dee1/static/images/void.1226e578cdf3.svg"/>
-            </div>
-        </div>
-      </div>
-    </div>
- -->
 
-</br>
+  </br>
   </div><!-- Segment 3 -->
   <div class="ui center aligned modern-section" id="projects">
     <div class="ui text container" style="padding-top: 0em;">
@@ -182,42 +239,60 @@
       <div class="ui horizontal divider"><i class="ui code icon"></i></div>
     </div>
     <div class="ui stripe community vertical container">
-      <div class="ui three column center aligned divided very relaxed stackable grid container">
+      <div class="ui three column center aligned very relaxed stackable grid container">
         <div class="row">
-          <div class="column"><a href="project/hackathon-2023-powered-by-gcp.html">
-              <div class="ui disabled image"><img alt="project-detail-image-1" class="ui medium image" height="50%"
-                  src="https://raw.githubusercontent.com/raahoolkumeriya/raahoolkumeriya.github.io/5dfa88d554b33d02cb02a7ddbfa759576f12d616/static/images/design.6b17291fdf4f.svg?sanitize=true"
-                  width="50%" />
-              </div>
-              <h2 class="ui header">Hackathon 2023 Powered by GCP</h2>
-            </a>
-            <div class="ui hidden divider"></div>
-            <p>Hybrid Workplace Management System</p>
+          <div class="column">
+            <div class="ui modern-card" style="height: 100%;">
+              <a href="project/powering-the-european-champion-of-the-future-with-ai.html">
+                <div style="margin-bottom: 0.8em;">
+                  <img src="static/images/deutsche-bank.svg" alt="Deutsche Bank" class="company-logo" />
+                </div>
+                <div class="ui disabled image"><img alt="project-detail-image-4" class="ui medium image" height="50%"
+                    src="https://raw.githubusercontent.com/raahoolkumeriya/raahoolkumeriya.github.io/5dfa88d554b33d02cb02a7ddbfa759576f12d616/static/images/design.6b17291fdf4f.svg?sanitize=true"
+                    width="50%" />
+                </div>
+                <h2 class="ui header modern-text-gradient">Powering the European Champion of the Future with AI</h2>
+              </a>
+              <div class="ui hidden divider"></div>
+              <p>Deutsche Bank Hackathon 2026: Eurorisk Deep Mind – AI-Driven CRO Command Center</p>
+            </div>
           </div>
-          <div class="column"><a href="project/malicious-ipv4-or-domain-detection.html">
-              <div class="ui disabled image"><img alt="project-detail-image-2" class="ui medium image" height="50%"
-                  src="https://raw.githubusercontent.com/raahoolkumeriya/raahoolkumeriya.github.io/5dfa88d554b33d02cb02a7ddbfa759576f12d616/static/images/design.6b17291fdf4f.svg?sanitize=true"
-                  width="50%" /></div>
-              <h2 class="ui header">Malicious IPv4 or Domain Detection</h2>
-            </a>
-            <div class="ui hidden divider"></div>
-            <p>Detection of IPV4 or Domain name is malicious or not with the help of URLScan and Virustotal API's</p>
+          <div class="column">
+            <div class="ui modern-card" style="height: 100%;">
+              <a href="project/hackathon-2023-powered-by-gcp.html">
+                <div style="margin-bottom: 0.8em;">
+                  <img src="static/images/gcp.svg" alt="GCP" class="company-logo" />
+                </div>
+                <div class="ui disabled image"><img alt="project-detail-image-1" class="ui medium image" height="50%"
+                    src="https://raw.githubusercontent.com/raahoolkumeriya/raahoolkumeriya.github.io/5dfa88d554b33d02cb02a7ddbfa759576f12d616/static/images/design.6b17291fdf4f.svg?sanitize=true"
+                    width="50%" />
+                </div>
+                <h2 class="ui header modern-text-gradient">Hackathon 2023 Powered by GCP</h2>
+              </a>
+              <div class="ui hidden divider"></div>
+              <p>Hybrid Workplace Management System</p>
+            </div>
           </div>
-          <div class="column"><a href="project/whatsapp-chat-analysis-with-streamlit.html">
-              <div class="ui disabled image"><img alt="project-detail-image-3" class="ui medium image" height="50%"
-                  src="https://raw.githubusercontent.com/raahoolkumeriya/raahoolkumeriya.github.io/5dfa88d554b33d02cb02a7ddbfa759576f12d616/static/images/design.6b17291fdf4f.svg?sanitize=true"
-                  width="50%" /></div>
-              <h2 class="ui header">Whatsapp chat Analysis with Streamlit</h2>
-            </a>
-            <div class="ui hidden divider"></div>
-            <p>WhatsApp Chat Processor is a Data Science fun project: This application is compatible with both iOS and
-              Android non-media exported chat.</p>
+          <div class="column">
+            <div class="ui modern-card" style="height: 100%;">
+              <a href="project/malicious-ipv4-or-domain-detection.html">
+                <div style="margin-bottom: 0.8em;">
+                  <i class="shield alternate large icon" style="color: #2563eb;"></i>
+                </div>
+                <div class="ui disabled image"><img alt="project-detail-image-2" class="ui medium image" height="50%"
+                    src="https://raw.githubusercontent.com/raahoolkumeriya/raahoolkumeriya.github.io/5dfa88d554b33d02cb02a7ddbfa759576f12d616/static/images/design.6b17291fdf4f.svg?sanitize=true"
+                    width="50%" /></div>
+                <h2 class="ui header modern-text-gradient">Malicious IPv4 or Domain Detection</h2>
+              </a>
+              <div class="ui hidden divider"></div>
+              <p>Detection of IPV4 or Domain name is malicious or not with the help of URLScan and Virustotal API's</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="fluid ui buttons" style="padding-top: 0%;"><a class="ui text container button modern-btn"
-        href="projects.html">View All Projects</a></div>
+        href="projects.html"><i class="th list icon"></i> View All Projects</a></div>
   </div>
 
   <!-- Segment 4 -->
@@ -232,20 +307,40 @@
       <div class="ui four column center aligned very relaxed stackable grid container">
         <div class="row">
           <div class="column">
-            <h2 class="ui icon medium header"><i class="tasks icon"></i> programming languages</h2>
-            <p>Python, Shell Script, PLSQL</p>
+            <div class="ui modern-card" style="height: 100%;">
+              <h2 class="ui icon medium header">
+                <i class="tasks icon" style="color: #2563eb !important;"></i>
+                <span class="modern-text-gradient">programming languages</span>
+              </h2>
+              <p>Python, Shell Script, PLSQL</p>
+            </div>
           </div>
           <div class="column">
-            <h2 class="ui icon medium header"><i class="database icon"></i> databases</h2>
-            <p>Oracle Exa-CC, MonogoDB, MySQL, Postgres</p>
+            <div class="ui modern-card" style="height: 100%;">
+              <h2 class="ui icon medium header">
+                <i class="database icon" style="color: #2563eb !important;"></i>
+                <span class="modern-text-gradient">databases</span>
+              </h2>
+              <p>Oracle Exa-CC, MonogoDB, MySQL, Postgres</p>
+            </div>
           </div>
           <div class="column">
-            <h2 class="ui icon medium header"><i class="braille icon"></i> frameworks</h2>
-            <p>Streamlit, FastAPI, GitHub, LangGraph, Langchain</p>
+            <div class="ui modern-card" style="height: 100%;">
+              <h2 class="ui icon medium header">
+                <i class="cubes icon" style="color: #2563eb !important;"></i>
+                <span class="modern-text-gradient">frameworks</span>
+              </h2>
+              <p>Streamlit, FastAPI, GitHub, LangGraph, Langchain</p>
+            </div>
           </div>
           <div class="column">
-            <h2 class="ui icon medium header"><i class="cogs icon"></i> tools</h2>
-            <p>Ansible, CICD, Sciket-Learn, GCP</p>
+            <div class="ui modern-card" style="height: 100%;">
+              <h2 class="ui icon medium header">
+                <i class="cogs icon" style="color: #2563eb !important;"></i>
+                <span class="modern-text-gradient">tools</span>
+              </h2>
+              <p>Ansible, CICD, Sciket-Learn, GCP</p>
+            </div>
           </div>
         </div>
       </div>
@@ -254,12 +349,22 @@
       <div class="ui four column center aligned very relaxed stackable grid container">
         <div class="row">
           <div class="column">
-            <h2 class="ui icon medium header"><i class="bolt icon"></i> comfortable with</h2>
-            <p>Data Science, Machine Learning, Deep Learning</p>
+            <div class="ui modern-card" style="height: 100%;">
+              <h2 class="ui icon medium header">
+                <i class="bolt icon" style="color: #2563eb !important;"></i>
+                <span class="modern-text-gradient">comfortable with</span>
+              </h2>
+              <p>Data Science, Machine Learning, Deep Learning</p>
+            </div>
           </div>
           <div class="column">
-            <h2 class="ui icon medium header"><i class="tint icon"></i> working on</h2>
-            <p>AI, GenAI</p>
+            <div class="ui modern-card" style="height: 100%;">
+              <h2 class="ui icon medium header">
+                <i class="tint icon" style="color: #2563eb !important;"></i>
+                <span class="modern-text-gradient">working on</span>
+              </h2>
+              <p>AI, GenAI</p>
+            </div>
           </div>
         </div>
       </div>
@@ -267,7 +372,8 @@
   </div><!-- Segment 5 -->
 
   <div class="ui text container modern-section" id="achievements">
-    <p class="ui text center aligned header modern-text-gradient" style="font-size: 3em; margin: 0em;padding-bottom: 0em !important ">Awards
+    <p class="ui text center aligned header modern-text-gradient"
+      style="font-size: 3em; margin: 0em;padding-bottom: 0em !important ">Awards
       and Achievements</p>
     <div class="ui horizontal divider"><i class="ui code icon"></i></div>
   </div>
@@ -277,121 +383,158 @@
         <div class="ui four column padded grid">
           <div class="large screen only sixteen wide column">
             <div class="ui three doubling cards">
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation on Dementia UK 2024 Hackathon</a></div>
-                <div class="ui small bottom right attached label">2024 July</div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2026 July</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"
+                    href="project/powering-the-european-champion-of-the-future-with-ai.html"><img
+                      src="static/images/deutsche-bank.svg" alt="Deutsche Bank" class="company-logo" />Deutsche Bank
+                    Hackathon 2026: Eurorisk Deep Mind – AI CRO Command Center</a></div>
               </div>
-              <div class="card modern-card">
-                <div class="card modern-card">
-                  <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation on Oracle Exa-CC Database Migration</a></div>
-                  <div class="ui small bottom right attached label">2024 June</div>
-                </div>
-                </div>
-                <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Reward and
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2024 July</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><img
+                      src="static/images/dementia-uk.svg" alt="Dementia UK" class="company-logo" />Appreciation
+                    on Dementia UK 2024 Hackathon</a></div>
+              </div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2024 June</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><img
+                      src="static/images/oracle.svg" alt="Oracle" class="company-logo" />Appreciation
+                    on Oracle Exa-CC Database Migration</a></div>
+              </div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2023 October</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><img
+                      src="static/images/deutsche-bank.svg" alt="Deutsche Bank" class="company-logo" />Reward and
                     Recognition Award by Deutsche Bank</a></div>
-                <div class="ui small bottom right attached label">2023 October</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2023 July</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><img
+                      src="static/images/gcp.svg" alt="GCP" class="company-logo" />Appreciation
                     of the development of a working solution for Hackathon 2023</a></div>
-                <div class="ui small bottom right attached label">2023 July</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2023 March</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><i
+                      class="cogs icon" style="color: #2563eb; margin-right: 8px;"></i>Appreciation
                     of production release CICD pipeline development</a></div>
-                <div class="ui small bottom right attached label">2023 March</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2022 March</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><img
+                      src="static/images/mongodb.svg" alt="MongoDB" class="company-logo" />Appreciation
                     on MongoDB reporting automation, Artifact development and delivery tool</a></div>
-                <div class="ui small bottom right attached label">2022 March</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Whatsapp Chat
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2023 March</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><img
+                      src="static/images/streamlit.svg" alt="Streamlit" class="company-logo" />Whatsapp Chat
                     processor featured in the weekly Round-up: Streamlit</a></div>
-                <div class="ui small bottom right attached label">2023 March</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Appreciation
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2020 November</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><img
+                      src="static/images/mongodb.svg" alt="MongoDB" class="company-logo" />Appreciation
                     on MongoDB reporting automation</a></div>
-                <div class="ui small bottom right attached label">2020 November</div>
               </div>
 
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Reward and
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2019 October</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><img
+                      src="static/images/deutsche-bank.svg" alt="Deutsche Bank" class="company-logo" />Reward and
                     Recognition Award by Deutsche Bank</a></div>
-                <div class="ui small bottom right attached label">2019 October</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Nominated for
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2018 December</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><i
+                      class="trophy yellow icon" style="margin-right: 8px;"></i>Nominated for
                     India excellence
                     award 2018</a></div>
-                <div class="ui small bottom right attached label">2018 December</div>
               </div>
 
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Bootstrap and
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2014 May</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><i
+                      class="bolt icon" style="color: #059669; margin-right: 8px;"></i>Bootstrap and
                     feed loading activity</a></div>
-                <div class="ui small bottom right attached label">2014 May</div>
               </div>
 
-              <div class="card modern-card">
-                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item">Line Follower
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2011 August</span>
+                <div class="ui link huge list" style="color: rgb(61, 61, 61) !important;"><a class="item"><i
+                      class="robot icon" style="color: #7c3aed; margin-right: 8px;"></i>Line Follower
                     autobot inter college championship</a></div>
-                <div class="ui tiny bottom right attached label">2011 August</div>
               </div>
 
             </div>
           </div>
           <div class="tablet only mobile only sixteen wide column">
             <div class="ui one doubling cards">
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Reward and Recognition Award by Deutsche Bank</a></div>
-                <div class="ui small bottom right attached label">2023 October</div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2026 July</span>
+                <div class="ui big link list"><a class="item"
+                    href="project/powering-the-european-champion-of-the-future-with-ai.html"><img
+                      src="/static/images/deutsche-bank.svg" alt="Deutsche Bank" class="company-logo" />Deutsche Bank
+                    Hackathon 2026: Eurorisk Deep Mind – AI CRO Command Center</a></div>
               </div>
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Appreciation of the development of a working solution for
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2023 October</span>
+                <div class="ui big link list"><a class="item"><img src="/static/images/deutsche-bank.svg"
+                      alt="Deutsche Bank" class="company-logo" />Reward and Recognition Award by Deutsche Bank</a></div>
+              </div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2023 July</span>
+                <div class="ui big link list"><a class="item"><img src="/static/images/gcp.svg" alt="GCP"
+                      class="company-logo" />Appreciation of the development of a working solution for
                     Hackathon 2023</a></div>
-                <div class="ui small bottom right attached label">2023 July</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Appreciation of production release CICD pipeline
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2023 March</span>
+                <div class="ui big link list"><a class="item"><i class="cogs icon"
+                      style="color: #2563eb; margin-right: 8px;"></i>Appreciation of production release CICD pipeline
                     development</a></div>
-                <div class="ui small bottom right attached label">2023 March</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Appreciation on Artifact
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2022 March</span>
+                <div class="ui big link list"><a class="item"><i class="file code icon"
+                      style="color: #7c3aed; margin-right: 8px;"></i>Appreciation on Artifact
                     development and delivery tool</a></div>
-                <div class="ui small bottom right attached label">2022 March</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Whatsapp Chat processor featured in the weekly Round-up:
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2021 July</span>
+                <div class="ui big link list"><a class="item"><img src="/static/images/streamlit.svg" alt="Streamlit"
+                      class="company-logo" />Whatsapp Chat processor featured in the weekly Round-up:
                     Streamlit
                   </a></div>
-                <div class="ui small bottom right attached label">2021 July</div>
               </div>
 
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Appreciation on MongoDB reporting automation</a></div>
-                <div class="ui small bottom right attached label">2020 November</div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2020 November</span>
+                <div class="ui big link list"><a class="item"><img src="/static/images/mongodb.svg" alt="MongoDB"
+                      class="company-logo" />Appreciation on MongoDB reporting automation</a></div>
               </div>
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Reward and Recognition Award by Deutsche Bank</a></div>
-                <div class="ui small bottom right attached label">2019 October</div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2019 October</span>
+                <div class="ui big link list"><a class="item"><img src="/static/images/deutsche-bank.svg"
+                      alt="Deutsche Bank" class="company-logo" />Reward and Recognition Award by Deutsche Bank</a></div>
               </div>
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Nominated for India excellence
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2018 December</span>
+                <div class="ui big link list"><a class="item"><i class="trophy yellow icon"
+                      style="margin-right: 8px;"></i>Nominated for India excellence
                     award 2018</a></div>
-                <div class="ui small bottom right attached label">2018 December</div>
               </div>
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Bootstrap and feed loading activity</a></div>
-                <div class="ui small bottom right attached label">2014 May</div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2014 May</span>
+                <div class="ui big link list"><a class="item"><i class="bolt icon"
+                      style="color: #059669; margin-right: 8px;"></i>Bootstrap and feed loading activity</a></div>
               </div>
-              <div class="card modern-card">
-                <div class="ui big link list"><a class="item">Line Follower autobot inter college championship</a></div>
-                <div class="ui small bottom right attached label">2011 August</div>
+              <div class="card modern-card" style="position: relative; padding-top: 2.2em;">
+                <span class="grey-ribbon-right"><i class="calendar alternate outline icon"></i> 2011 August</span>
+                <div class="ui big link list"><a class="item"><i class="robot icon"
+                      style="color: #7c3aed; margin-right: 8px;"></i>Line Follower autobot inter college
+                    championship</a></div>
               </div>
             </div>
           </div>
@@ -440,7 +583,7 @@
     s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
     var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
     window.kommunicate = m; m._globals = kommunicateSettings;
-})(document, window.kommunicate || {});
+  })(document, window.kommunicate || {});
 </script> -->
 
 </html>
