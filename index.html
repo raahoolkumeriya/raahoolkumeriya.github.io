@@ -38,55 +38,271 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .code-card {
-      background: #0f172a;
+    /* Modern Terminal Window */
+    .terminal-window {
+      background: #18181b;
       color: #f8fafc;
-      padding: 2em;
-      border-radius: 20px;
-      box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.4);
-      font-family: 'Fira Code', Consolas, monospace;
+      border-radius: 14px;
+      box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       text-align: left;
-      margin-top: 5%;
-      font-size: 1.35rem;
-      line-height: 1.6;
-      white-space: pre-wrap;
+      margin-top: 3%;
       border: 1px solid rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(16px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+      overflow: hidden;
     }
 
-    .code-card:hover {
+    .terminal-window:hover {
       transform: translateY(-4px);
-      box-shadow: 0 25px 60px -10px rgba(101, 101, 101, 0.35);
+      box-shadow: 0 32px 70px -12px rgba(0, 0, 0, 0.6);
+      border-color: rgba(255, 255, 255, 0.22);
     }
 
-    .code-card .keyword {
+    /* Terminal Header */
+    .terminal-header {
+      background: rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.65em 1.25em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .terminal-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      cursor: pointer;
+    }
+
+    .terminal-dot:hover {
+      transform: scale(1.18);
+      opacity: 0.9;
+    }
+
+    .terminal-dot.red {
+      background-color: #ff5f56;
+      box-shadow: 0 0 8px rgba(255, 95, 86, 0.5);
+    }
+
+    .terminal-dot.yellow {
+      background-color: #ffbd2e;
+      box-shadow: 0 0 8px rgba(255, 189, 46, 0.5);
+    }
+
+    .terminal-dot.green {
+      background-color: #27c93f;
+      box-shadow: 0 0 8px rgba(39, 201, 63, 0.5);
+    }
+
+    .terminal-tab {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.25em 0.85em;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .terminal-tab-icon {
+      color: #38bdf8 !important;
+      font-size: 0.9rem !important;
+      margin: 0 !important;
+    }
+
+    .terminal-copy-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      border-radius: 6px;
+      padding: 0.3em 0.75em;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .terminal-copy-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .terminal-copy-btn.copied {
+      background: rgba(16, 185, 129, 0.2) !important;
+      color: #34d399 !important;
+      border-color: rgba(16, 185, 129, 0.4) !important;
+    }
+
+    /* Terminal Body */
+    .terminal-body {
+      padding: 1.4em 1.6em;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: #f1f5f9;
+      overflow-x: auto;
+    }
+
+    .terminal-code-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.2em;
+    }
+
+    .line-num {
+      color: rgba(255, 255, 255, 0.25);
+      width: 1.8em;
+      flex-shrink: 0;
+      user-select: none;
+      font-size: 0.9em;
+      text-align: right;
+      margin-right: 1.2em;
+    }
+
+    .code-text {
+      flex: 1;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Syntax Highlighting */
+    .syn-keyword {
       color: #38bdf8;
       font-weight: 600;
     }
 
-    .code-card .func {
+    .syn-func {
       color: #facc15;
       font-weight: 600;
     }
 
-    .code-card .string {
+    .syn-paren {
+      color: #cbd5e1;
+    }
+
+    .syn-doc {
       color: #4ade80;
     }
 
-    .code-card .comment {
-      color: #94a3b8;
-      font-style: italic;
+    .syn-key {
+      color: #a78bfa;
+      font-weight: 500;
     }
 
-    .code-card .icon {
+    /* Social Links in Terminal */
+    .terminal-socials {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      vertical-align: middle;
+      margin-left: 0.3em;
+      flex-wrap: wrap;
+    }
+
+    .terminal-social-link {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       color: #cbd5e1 !important;
-      transition: color 0.3s, transform 0.3s;
+      padding: 0.22em 0.65em;
+      border-radius: 7px;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4em;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none !important;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 500;
     }
 
-    .code-card .icon:hover {
+    .terminal-social-link:hover {
+      transform: translateY(-2px);
+      color: #ffffff !important;
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .terminal-social-link.github:hover {
+      border-color: #f8fafc;
+      box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+    }
+
+    .terminal-social-link.twitter:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
       color: #38bdf8 !important;
-      transform: scale(1.15);
+    }
+
+    .terminal-social-link.medium:hover {
+      border-color: #34d399;
+      box-shadow: 0 4px 14px rgba(52, 211, 153, 0.35);
+      color: #34d399 !important;
+    }
+
+    .terminal-social-link.linkedin:hover {
+      border-color: #60a5fa;
+      box-shadow: 0 4px 14px rgba(96, 165, 250, 0.35);
+      color: #60a5fa !important;
+    }
+
+    /* Terminal Footer / Prompt */
+    .terminal-footer {
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      margin-top: 0.85em;
+      padding-top: 0.75em;
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+
+    .terminal-prompt-user {
+      color: #34d399;
+      font-weight: 600;
+    }
+
+    .terminal-prompt-path {
+      color: #38bdf8;
+    }
+
+    .terminal-prompt-symbol {
+      color: #facc15;
+      font-weight: bold;
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1.15em;
+      background-color: #38bdf8;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      animation: terminalCursorBlink 1s step-start infinite;
+    }
+
+    @keyframes terminalCursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     .modern-card {
@@ -153,19 +369,40 @@
     <div class="ui masthead"><!-- Segment 1 -->
       <div class="ui four column padded grid">
         <div class="ui large screen only eight wide left aligned column">
-          <div class="code-card"><span class="keyword">def</span> <span class="func">about_me</span>():
-            <span class="string">'''
-              Senior Database Platform Engineer.,
-              I ❤️ working with Agentic Ecosystem
-              '''</span>
-            <span class="keyword">return</span> <span class="ui icons right link"
-              style="vertical-align: middle; display: inline-block;"><a aria-label="github" class="ui item"
-                href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon"></i></a><a
-                aria-hidden="true" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i
-                  class="x large icon"></i></a><a aria-hidden="true" class="item"
-                href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon"></i></a><a
-                aria-hidden="true" class="item" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank"><i
-                  class="linkedin large icon"></i></a></span>
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="terminal-dot red" title="Close"></span>
+                <span class="terminal-dot yellow" title="Minimize"></span>
+                <span class="terminal-dot green" title="Expand"></span>
+              </div>
+              <div class="terminal-tab">
+                <i class="terminal icon terminal-tab-icon"></i>
+                <span>about_me.py</span>
+              </div>
+              <button class="terminal-copy-btn" id="terminal-copy-btn-desktop" onclick="copyTerminalCode('desktop')" title="Copy snippet">
+                <i class="copy outline icon" style="margin: 0;"></i>
+                <span class="copy-label">Copy</span>
+              </button>
+            </div>
+            <div class="terminal-body" id="terminal-code-desktop">
+              <div class="terminal-code-row"><span class="line-num">1</span><div class="code-text"><span class="syn-keyword">def</span> <span class="syn-func">about_me</span><span class="syn-paren">():</span></div></div>
+              <div class="terminal-code-row"><span class="line-num">2</span><div class="code-text">    <span class="syn-doc">'''</span></div></div>
+              <div class="terminal-code-row"><span class="line-num">3</span><div class="code-text">    <span class="syn-doc">Senior Database Platform Engineer.,</span></div></div>
+              <div class="terminal-code-row"><span class="line-num">4</span><div class="code-text">    <span class="syn-doc">I ❤️ working with Agentic Ecosystem</span></div></div>
+              <div class="terminal-code-row"><span class="line-num">5</span><div class="code-text">    <span class="syn-doc">'''</span></div></div>
+              <div class="terminal-code-row"><span class="line-num">6</span><div class="code-text">    <span class="syn-keyword">return</span> <span class="syn-paren">{</span></div></div>
+              <div class="terminal-code-row"><span class="line-num">7</span><div class="code-text">        <span class="syn-key">"socials"</span>: <div class="terminal-socials">
+                <a href="https://github.com/raahoolkumeriya" target="_blank" class="terminal-social-link github" title="GitHub" aria-label="GitHub"><i class="github icon"></i> GitHub</a>
+                <a href="https://x.com/KumeriyaRahul" target="_blank" class="terminal-social-link twitter" title="X (Twitter)" aria-label="X"><i class="x icon"></i> X</a>
+                <a href="https://rahulkumeriya.medium.com" target="_blank" class="terminal-social-link medium" title="Medium" aria-label="Medium"><i class="medium icon"></i> Medium</a>
+                <a href="https://www.linkedin.com/in/rahulkumeriya" target="_blank" class="terminal-social-link linkedin" title="LinkedIn" aria-label="LinkedIn"><i class="linkedin icon"></i> LinkedIn</a>
+              </div></div></div>
+              <div class="terminal-code-row"><span class="line-num">8</span><div class="code-text">    <span class="syn-paren">}</span></div></div>
+              <div class="terminal-footer">
+                <span class="terminal-prompt-user">rahul@cloud</span><span style="color:#64748b;">:</span><span class="terminal-prompt-path">~/portfolio</span><span class="terminal-prompt-symbol">$</span> <span>python3 -m bio</span><span class="terminal-cursor"></span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="ui large screen only eight wide column">
@@ -178,22 +415,40 @@
           <div class="ui equal width center aligned padded grid">
             <div class="row">
               <div class="column">
-                <div class="code-card" style="font-size: 1.1rem; margin-top: 0;"><span class="keyword">def</span> <span
-                    class="func">about_me</span>():
-                  <span class="string">'''
-                    Sr. Database Platform
-                    Engineer
-                    I ❤️ working with
-                    Agentic Ecosystem
-                    '''</span>
-                  <span class="keyword">return</span> <span class="ui right link"
-                    style="vertical-align: middle; display: inline-block;"><a aria-label="github" class="ui item"
-                      href="https://github.com/raahoolkumeriya" target="_blank"><i class="github large icon"></i></a><a
-                      aria-label="x" class="item" href="https://x.com/KumeriyaRahul" target="_blank"><i
-                        class="x large icon"></i></a><a aria-label="medium" class="item"
-                      href="https://rahulkumeriya.medium.com" target="_blank"><i class="medium large icon"></i></a><a
-                      aria-label="linkedin" class="item" href="https://www.linkedin.com/in/rahulkumeriya"
-                      target="_blank"><i class="linkedin large icon"></i></a></span>
+                <div class="terminal-window" style="font-size: 1rem; margin-top: 0;">
+                  <div class="terminal-header">
+                    <div class="terminal-controls">
+                      <span class="terminal-dot red"></span>
+                      <span class="terminal-dot yellow"></span>
+                      <span class="terminal-dot green"></span>
+                    </div>
+                    <div class="terminal-tab">
+                      <i class="terminal icon terminal-tab-icon"></i>
+                      <span>about_me.py</span>
+                    </div>
+                    <button class="terminal-copy-btn" id="terminal-copy-btn-mobile" onclick="copyTerminalCode('mobile')" title="Copy snippet">
+                      <i class="copy outline icon" style="margin: 0;"></i>
+                      <span class="copy-label">Copy</span>
+                    </button>
+                  </div>
+                  <div class="terminal-body" id="terminal-code-mobile" style="padding: 1.2em 1.2em; font-size: 0.95rem;">
+                    <div class="terminal-code-row"><span class="line-num">1</span><div class="code-text"><span class="syn-keyword">def</span> <span class="syn-func">about_me</span><span class="syn-paren">():</span></div></div>
+                    <div class="terminal-code-row"><span class="line-num">2</span><div class="code-text">    <span class="syn-doc">'''</span></div></div>
+                    <div class="terminal-code-row"><span class="line-num">3</span><div class="code-text">    <span class="syn-doc">Sr. Database Platform Engineer</span></div></div>
+                    <div class="terminal-code-row"><span class="line-num">4</span><div class="code-text">    <span class="syn-doc">I ❤️ working with Agentic Ecosystem</span></div></div>
+                    <div class="terminal-code-row"><span class="line-num">5</span><div class="code-text">    <span class="syn-doc">'''</span></div></div>
+                    <div class="terminal-code-row"><span class="line-num">6</span><div class="code-text">    <span class="syn-keyword">return</span> <span class="syn-paren">{</span></div></div>
+                    <div class="terminal-code-row"><span class="line-num">7</span><div class="code-text">        <span class="syn-key">"socials"</span>: <div class="terminal-socials" style="margin-top: 4px;">
+                      <a href="https://github.com/raahoolkumeriya" target="_blank" class="terminal-social-link github" title="GitHub" aria-label="GitHub"><i class="github icon"></i> GitHub</a>
+                      <a href="https://x.com/KumeriyaRahul" target="_blank" class="terminal-social-link twitter" title="X" aria-label="X"><i class="x icon"></i> X</a>
+                      <a href="https://rahulkumeriya.medium.com" target="_blank" class="terminal-social-link medium" title="Medium" aria-label="Medium"><i class="medium icon"></i> Medium</a>
+                      <a href="https://www.linkedin.com/in/rahulkumeriya" target="_blank" class="terminal-social-link linkedin" title="LinkedIn" aria-label="LinkedIn"><i class="linkedin icon"></i> LinkedIn</a>
+                    </div></div></div>
+                    <div class="terminal-code-row"><span class="line-num">8</span><div class="code-text">    <span class="syn-paren">}</span></div></div>
+                    <div class="terminal-footer" style="font-size: 0.88rem;">
+                      <span class="terminal-prompt-user">rahul@cloud</span><span style="color:#64748b;">:</span><span class="terminal-prompt-path">~</span><span class="terminal-prompt-symbol">$</span> <span>python3 -m bio</span><span class="terminal-cursor"></span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -573,6 +828,50 @@
       </div>
     </div>
   </div>
+  <script>
+    function copyTerminalCode(target) {
+      var code = `def about_me():\n    '''\n    Senior Database Platform Engineer\n    I ❤️ working with Agentic Ecosystem\n    '''\n    return {\n        "github": "https://github.com/raahoolkumeriya",\n        "x": "https://x.com/KumeriyaRahul",\n        "medium": "https://rahulkumeriya.medium.com",\n        "linkedin": "https://www.linkedin.com/in/rahulkumeriya"\n    }`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(function() {
+          updateCopyButtonState(target);
+        }).catch(function() {
+          fallbackCopy(code, target);
+        });
+      } else {
+        fallbackCopy(code, target);
+      }
+    }
+
+    function updateCopyButtonState(target) {
+      var btn = document.getElementById('terminal-copy-btn-' + target) || document.getElementById('terminal-copy-btn');
+      if (btn) {
+        var origHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="check icon" style="margin: 0; color: #34d399;"></i> <span style="color: #34d399;">Copied!</span>';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.innerHTML = origHtml;
+          btn.classList.remove('copied');
+        }, 2000);
+      }
+    }
+
+    function fallbackCopy(text, target) {
+      var textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        updateCopyButtonState(target);
+      } catch (err) {
+        console.error('Fallback copy failed', err);
+      }
+      document.body.removeChild(textArea);
+    }
+  </script>
 </body>
 
 <!-- <script type="text/javascript">
