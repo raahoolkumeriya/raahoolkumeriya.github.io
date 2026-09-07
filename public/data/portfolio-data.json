@@ -1,0 +1,390 @@
+{
+  "profile": {
+    "name": "Rahul Kumeriya",
+    "role": "Senior Database Platform Engineer & AI Systems Architect",
+    "designation": "Assistant Vice President",
+    "company": "Deutsche Bank",
+    "location": "Pune, India",
+    "avatar": "/static/images/developer_activity.fc9f8bef8cc2.svg",
+    "heroTagline": "⚡ Senior Database Platform Engineer & AI Architect",
+    "heroTitle": "Architecting Resilient Data Platforms & <span class=\"gradient-text\">Enterprise Agentic AI</span>.",
+    "heroSubtitle": "Assistant Vice President at <strong>Deutsche Bank</strong>. Specializing in mission-critical Oracle Exa-CC automation, Google Cloud Platform (GCP) infrastructure, and enterprise Agentic RAG architectures.",
+    "resumeUrl": "https://docs.google.com/document/d/1aeDuwuT_fwPFJxc80L2BTWPmobYejq1lXNL7ccZJt3w/edit?usp=sharing",
+    "resumeDocsUrl": "https://docs.google.com/document/d/e/2PACX-1vT7EwryeU_O4KMbSNZL6D7YKBedkC4qZADnUG7W5M_6dsyAvcP9tVBizW0AaFKIRQLX6J5txBkyTWNI/pub",
+    "fullCvUrl": "https://docs.google.com/document/d/e/2PACX-1vRJqPJ74Hvo_P2QztoQNwCWEUwyGlwU0-0nggsQhlwxea8N-xQbX0EO6Q2b56EStPtPWtYZ28LbpWYU/pub",
+    "socials": {
+      "github": "https://github.com/raahoolkumeriya",
+      "linkedin": "https://www.linkedin.com/in/rahulkumeriya",
+      "twitter": "https://x.com/KumeriyaRahul",
+      "medium": "https://rahulkumeriya.medium.com",
+      "contact": "https://raahoolkumeriya.github.io/connectme/"
+    },
+    "metrics": [
+      {
+        "id": "metric-1",
+        "value": "13+ Years",
+        "label": "Enterprise Platform & DB Infrastructure"
+      },
+      {
+        "id": "metric-2",
+        "value": "Zero-Touch",
+        "label": "Oracle Exa-CC Deployment Automation"
+      },
+      {
+        "id": "metric-3",
+        "value": "Mission-Critical",
+        "label": "High-Resilience Banking Architectures"
+      }
+    ],
+    "terminal": {
+      "about": "class PlatformEngineer:\n    \"\"\"Enterprise Data Infrastructure & Agentic AI Architect\"\"\"\n    def __init__(self):\n        self.role = \"Assistant Vice President\"\n        self.organization = \"Deutsche Bank\"\n        self.focus = [\"Oracle Exa-CC\", \"GCP Cloud\", \"Agentic AI\"]\n        self.socials = {\n            \"github\": \"https://github.com/raahoolkumeriya\",\n            \"linkedin\": \"https://www.linkedin.com/in/rahulkumeriya\",\n            \"twitter\": \"https://x.com/KumeriyaRahul\",\n            \"medium\": \"https://rahulkumeriya.medium.com\"\n        }",
+      "architecture": "# Enterprise Production Architecture\nsystem_name: \"Eurorisk Deep Mind & Exa-CC Platform\"\ntier: \"Tier-1 Mission Critical\"\npillars:\n  database: [\"Oracle Exa-CC\", \"MongoDB\", \"PostgreSQL\"]\n  cloud_infra: \"Google Cloud Platform (GCP)\"\n  ai_orchestration: \"LangGraph Multi-Agent RAG\"\n  automation: [\"Ansible\", \"Docker\", \"CI/CD Pipelines\"]\n  compliance: \"DORA (Digital Operational Resilience Act)\"",
+      "milestones": "{\n  \"hackathon_winner_2026\": \"DB Hackathon 1st Place (Eurorisk Deep Mind)\",\n  \"total_experience\": \"12+ Years Enterprise Platforms\",\n  \"leadership_awards\": [\n    \"Oracle Exa-CC Leadership Recognition (2024)\",\n    \"Deutsche Bank Reward & Recognition (2023)\",\n    \"Dementia UK Special Recognition Award\"\n  ]\n}"
+    }
+  },
+  "projects": [
+    {
+      "id": "project-eurorisk-deep-mind",
+      "slug": "powering-the-european-champion-of-the-future-with-ai",
+      "title": "Powering the European Champion of the Future with AI",
+      "subtitle": "Eurorisk Deep Mind – AI CRO Command Center",
+      "description": "Eurorisk Deep Mind – AI-Driven Chief Risk Officer (CRO) Command Center for European Banking Resilience, DORA Compliance & Real-Time Stress Test Modeling.",
+      "badge": "DB Hackathon 2026 Winner",
+      "badgeColor": "badge-purple",
+      "date": "2026-07-15",
+      "weight": 1,
+      "featured": true,
+      "github": "https://github.com/raahoolkumeriya/hackathon2026-AI",
+      "video": "https://www.youtube.com/embed/YBAGdg4EW3U",
+      "demo": "",
+      "tags": [
+        "Deutsche Bank",
+        "AI / LLMs",
+        "LangGraph",
+        "GCP",
+        "Python",
+        "FinTech",
+        "DORA"
+      ],
+      "content": "### Executive Summary\n\nDeveloped as part of the **Deutsche Bank Hackathon 2026**, **Eurorisk Deep Mind** addresses the European banking sector's 2026–2028 supervisory priorities: navigating geopolitical volatility, cyber resilience, and strict compliance with the **Digital Operational Resilience Act (DORA)**.\n\n### Core Architectural Pillars\n\n- **Autonomous Multi-Agent AI**: Deploys multi-agent AI systems utilizing Vector Retrieval-Augmented Generation (RAG) to dynamically monitor complex credit risks, Commercial Real Estate (CRE) loan exposures, and sovereign bond mark-to-market losses.\n- **DORA & Operational Resilience**: Automates real-time tracking of critical ICT vendor dependencies, third-party concentration risks, and regulatory compliance standards across European banking jurisdictions.\n- **Proactive Shock Simulations**: Replaces static quarterly reporting with daily, automated macro-economic and geopolitical shock simulations to proactively forecast bank liquidity and capital adequacy ratios.\n- **Cloud-Native Scalability**: Engineered with enterprise-grade Python backend architectures, containerized microservices, and interactive executive dashboards for Chief Risk Officers (CROs).\n\n### Technology Stack\n\n- **Backend**: Python, FastAPI, Pydantic\n- **AI / LLMs**: LangGraph, Vector RAG, Ollama / Vertex AI\n- **Cloud Infrastructure**: Google Cloud Platform (GCP), Cloud Run, Docker\n- **Regulatory Frameworks**: DORA, EBA Supervisory Guidelines"
+    },
+    {
+      "id": "project-hackathon-2023-gcp",
+      "slug": "hackathon-2023-powered-by-gcp",
+      "title": "Hackathon 2023 Powered by GCP",
+      "subtitle": "Hybrid Workplace Time & Resource Forecasting",
+      "description": "Hybrid Workplace Time & Resource Forecasting System built with Facebook Prophet, GCP, and Streamlit.",
+      "badge": "GCP Hackathon 2023",
+      "badgeColor": "badge-blue",
+      "date": "2023-07-20",
+      "weight": 2,
+      "featured": true,
+      "github": "https://github.com/raahoolkumeriya/hackathon2023",
+      "video": "",
+      "demo": "",
+      "tags": [
+        "GCP",
+        "Machine Learning",
+        "Time Series",
+        "Streamlit",
+        "Python",
+        "Facebook Prophet"
+      ],
+      "content": "### Overview\n\nDeveloped during the **Google Cloud Platform (GCP) Hackathon 2023**, this system delivers an intelligent time-series forecasting application designed to tackle post-pandemic hybrid workplace challenges. By accurately forecasting office attendance, cafeteria food catering demand, and hot-desk utilization, organizations can optimize facilities operational expenditure while enhancing employee workplace satisfaction.\n\n### Key Architectural Highlights\n\n- **Time-Series ML Forecasting Engine**: Employs Facebook Prophet models (`prophet_model.json`) trained on historical attendance matrices, seasonal holiday calendars, and day-of-week trends to project forward workplace resource requirements.\n- **Google Cloud Platform Integration**: Utilizes GCP infrastructure for scalable batch data ingestion, containerized execution via custom Docker containers, and robust pipeline automation.\n- **Interactive Streamlit Dashboard**: Provides a responsive, real-time command interface (`app.py`) allowing facility directors and floor managers to simulate sudden attendance surges, adjust prediction windows, and export demand schedules.\n- **Exploratory Data Analytics (EDA)**: Includes comprehensive Jupyter analysis notebooks (`timeseries.ipynb`, `eda.ipynb`) detailing feature selection, autocorrelation checks, and cross-validation metrics.\n\n### Technology Stack\n\n- **Machine Learning**: Facebook Prophet, Pandas, NumPy, Scikit-Learn\n- **User Interface**: Streamlit, Matplotlib, Seaborn\n- **Cloud Infrastructure**: Google Cloud Platform (GCP), Docker\n- **Repository**: [GitHub - hackathon2023](https://github.com/raahoolkumeriya/hackathon2023)"
+    },
+    {
+      "id": "project-malicious-detection",
+      "slug": "malicious-ipv4-or-domain-detection",
+      "title": "Malicious IPv4 or Domain Detection",
+      "subtitle": "High-Throughput Threat Intelligence Scanner",
+      "description": "Automated Threat Intelligence scanner combining VirusTotal and URLScan APIs built with FastAPI and Docker.",
+      "badge": "Cybersecurity API",
+      "badgeColor": "badge-emerald",
+      "date": "2021-07-10",
+      "weight": 3,
+      "featured": true,
+      "github": "https://github.com/raahoolkumeriya/malicious_detection",
+      "video": "",
+      "demo": "",
+      "tags": [
+        "Cybersecurity",
+        "FastAPI",
+        "VirusTotal",
+        "URLScan",
+        "Docker",
+        "Python",
+        "REST API"
+      ],
+      "content": "### Overview\n\nA high-throughput threat intelligence microservice engineered to evaluate whether an inbound IPv4 address or hostname domain poses an active security risk. By aggregating and normalizing live threat intelligence from **VirusTotal** and **URLScan** REST APIs, this engine provides immediate risk scoring for Security Operations Center (SOC) analysts and automated incident response orchestration workflows.\n\n### Architectural Capabilities\n\n- **Multi-Source Threat Aggregation**: Queries both VirusTotal and URLScan engines in parallel to inspect domain reputation scores, SSL certificate history, DNS routing anomalies, and known malicious payload signatures.\n- **Asynchronous FastAPI Microservice**: Implemented with Python's asynchronous `asyncio` and `httpx` within FastAPI, achieving sub-second query response times without blocking the event loop, accompanied by interactive OpenAPI / Swagger specifications.\n- **Containerized Deployment Architecture**: Fully packaged with Docker and multi-stage Dockerfiles for minimal production images, integrated with Docker Compose and GitHub Actions CI pipelines for automated linting and packaging.\n- **Automated Pytest Coverage**: Comprehensive test suites covering network timeout resilience, edge-case URL formats, payload verification, and mock API response mocking.\n\n### Technology Stack\n\n- **API Framework**: Python 3.9+, FastAPI, Pydantic, Uvicorn\n- **Threat Feeds**: VirusTotal API v3, URLScan.io API\n- **DevOps & QA**: Docker, Docker Compose, Pytest, GitHub Actions\n- **Repository**: [GitHub - malicious_detection](https://github.com/raahoolkumeriya/malicious_detection)"
+    },
+    {
+      "id": "project-whatsapp-streamlit",
+      "slug": "whatsapp-chat-analysis-with-streamlit",
+      "title": "WhatsApp Chat Analysis with Streamlit",
+      "subtitle": "Interactive NLP & Temporal Analytics Dashboard",
+      "description": "Data Science and NLP application for analyzing iOS and Android WhatsApp chat exports.",
+      "badge": "Streamlit Weekly Feature",
+      "badgeColor": "badge-purple",
+      "date": "2021-09-15",
+      "weight": 4,
+      "featured": false,
+      "github": "https://github.com/raahoolkumeriya/whatsapp-chat-streamlit",
+      "video": "",
+      "demo": "",
+      "tags": [
+        "Streamlit",
+        "Data Science",
+        "NLP",
+        "Pandas",
+        "Python",
+        "Data Visualization"
+      ],
+      "content": "### Overview\n\nAn interactive Natural Language Processing (NLP) and exploratory data analysis application designed to parse and visualize exported conversation transcripts from both **iOS** and **Android** WhatsApp clients. It extracts granular communication dynamics, temporal interaction heatmaps, emoji sentiment distributions, and linguistic word clouds.\n\n### Key Capabilities\n\n- **Multilingual WordCloud Engine**: Extracts lexicons across more than 50 natural languages with customizable stop-word exclusion and regex-based emoji separation.\n- **Member Participation & Temporal Heatmaps**: Calculates message volume per participant, monthly timeline spikes, active hourly brackets, and weekly busy-day matrix heatmaps.\n- **Emoji Distribution & Sentiment Scoring**: Maps emoji frequencies across group and one-on-one threads, visualizing emotional dynamics and communication patterns over time.\n- **Streamlit Interactive UI**: Built with Streamlit, Pandas, Matplotlib, and Seaborn to allow users to drag-and-drop raw `.txt` export archives for immediate client-side visualization.\n\n### Technology Stack\n\n- **Data Processing**: Python, Pandas, Regex\n- **NLP & Visualization**: WordCloud, Matplotlib, Seaborn\n- **Web App**: Streamlit\n- **Repository**: [GitHub - whatsapp-chat-streamlit](https://github.com/raahoolkumeriya/whatsapp-chat-streamlit)"
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-db-avp",
+      "company": "Deutsche Bank",
+      "role": "Assistant Vice President",
+      "rolePill": "Assistant Vice President",
+      "location": "Pune, India",
+      "startDate": "July 2022",
+      "endDate": "Present",
+      "duration": "4 yrs, 1 mo",
+      "isCurrent": true,
+      "logo": "/static/images/deutsche-bank.svg",
+      "featured": true,
+      "summary": "Lead platform engineer and AI architect focusing on enterprise self-service database automation, cloud infrastructure, and high-resilience AI systems.",
+      "highlights": [
+        "Cloud & AI Engineering Leadership: Lead Google Cloud Platform (GCP) Engineer and AI Developer, architecting self-service Agentic RAG (Retrieval-Augmented Generation) tools to automate enterprise workflows.",
+        "Hackathon Innovation: Creator of Eurorisk Deep Mind for Deutsche Bank Hackathon 2026 (\"Powering the European Champion of the Future with AI\") featuring autonomous risk shock agents and DORA compliance analytics.",
+        "Database & Platform Automation: Technical architect for Oracle ExaCC platform self-service automation workflows, significantly reducing deployment turnaround times and manual operational overhead."
+      ],
+      "tags": [
+        "Agentic RAG",
+        "GCP",
+        "Oracle ExaCC",
+        "Python",
+        "Ansible",
+        "OpenShift",
+        "CI/CD",
+        "DORA Compliance"
+      ]
+    },
+    {
+      "id": "exp-citi-officer",
+      "company": "Citi Corps Service India Pvt Ltd",
+      "role": "Officer",
+      "rolePill": "Officer",
+      "location": "Pune, India",
+      "startDate": "June 2020",
+      "endDate": "July 2022",
+      "duration": "2 years",
+      "isCurrent": false,
+      "logo": "/static/images/citi.svg",
+      "featured": false,
+      "summary": "Continuous delivery and DevOps engineering across mission-critical global payments platforms.",
+      "highlights": [
+        "Payment Domain Automation: Senior Automation Engineer responsible for end-to-end continuous delivery frameworks and rapid-release tooling across global payment systems.",
+        "DevOps Delivery Tools: Designed and deployed ADHOC package delivery automation tools using IBM UrbanCode Deploy (uDeploy), Python, and MongoDB microservices."
+      ],
+      "tags": [
+        "Payments Domain",
+        "CI/CD",
+        "Python",
+        "uDeploy",
+        "MongoDB",
+        "Oracle Database",
+        "Shell Scripting"
+      ]
+    },
+    {
+      "id": "exp-db-associate",
+      "company": "Deutsche Bank",
+      "role": "Associate",
+      "rolePill": "Associate",
+      "location": "Pune, India",
+      "startDate": "October 2017",
+      "endDate": "July 2020",
+      "duration": "2 yrs, 8 mos",
+      "isCurrent": false,
+      "logo": "/static/images/deutsche-bank.svg",
+      "featured": false,
+      "summary": "DevOps automation, containerized collateral management systems, and enterprise data analytics pipelines.",
+      "highlights": [
+        "Enterprise Ansible DevOps: Core member of the Ansible DevOps team, engineering automation playbooks that achieved over 2,000 hours of manual effort savings annually across enterprise operations. Conducted RedHat Ansible training programs.",
+        "Production Engineering & Collateral Management: Built and supported high-availability OpenShift microservice container deployments for global collateral management and valuation systems.",
+        "Data Science & AI/ML Projects: Developed machine learning pipelines analyzing Jira organizational behavior, incident tickets, change requests, and problem tickets to optimize support workflows."
+      ],
+      "tags": [
+        "Ansible",
+        "OpenShift",
+        "Data Science & ML",
+        "Collateral Management",
+        "Control-M",
+        "ITRS",
+        "Python"
+      ]
+    },
+    {
+      "id": "exp-cognizant-lead",
+      "company": "Cognizant",
+      "role": "Technical Lead",
+      "rolePill": "Technical Lead",
+      "location": "Pune, India",
+      "startDate": "March 2016",
+      "endDate": "October 2017",
+      "duration": "1 yr, 7 mos",
+      "isCurrent": false,
+      "logo": "/static/images/cognizant.svg",
+      "featured": false,
+      "summary": "Technical leadership overseeing enterprise regulatory and compliance applications.",
+      "highlights": [
+        "Compliance Platform Leadership: Technical Lead overseeing continuous monitoring and support across 52+ mission-critical Class A to Class D compliance applications.",
+        "Automated Monitoring Dashboards: Designed real-time monitoring dashboards to detect application failures and infrastructure bottlenecks proactively."
+      ],
+      "tags": [
+        "Compliance Management",
+        "Automation",
+        "Autosys",
+        "Oracle Database",
+        "Python",
+        "Shell Scripting"
+      ]
+    },
+    {
+      "id": "exp-tcs-system-eng",
+      "company": "Tata Consultancy Services",
+      "role": "System Engineer",
+      "rolePill": "System Engineer",
+      "location": "Pune / Trivandrum",
+      "startDate": "December 2012",
+      "endDate": "March 2016",
+      "duration": "3 yrs, 3 mos",
+      "isCurrent": false,
+      "logo": "/static/images/tcs.svg",
+      "featured": false,
+      "summary": "Financial risk systems, regulatory reporting pipelines, and financial reconciliation tooling.",
+      "highlights": [
+        "Banking Risk & Regulatory Reporting: Developed Market Risk reporting tools for Morgan Stanley and Axiom regulatory reporting environments for Deutsche Bank (TES).",
+        "Reconciliation Engineering: Built financial reconciliation pipelines using Barclays Intellimatch platform.",
+        "TCS Initial Learning Program (Trivandrum): Completed intensive software engineering, mainframe, and database systems training."
+      ],
+      "tags": [
+        "Market Risk Reporting",
+        "AXIOM",
+        "Barclays Intellimatch",
+        "Oracle Database",
+        "Autosys",
+        "Shell Scripting"
+      ]
+    }
+  ],
+  "gists": [
+    {
+      "id": "gist-mongo-base64-xml",
+      "title": "Decode Mongo Base64 Encrypted XML Data Strings",
+      "category": "Database & Automation Solution",
+      "scenario": "Shell script automation to execute MongoDB queries across heterogeneous database collections, generating operational reports at scheduled intervals and dispatching them via automated email attachments.",
+      "challenge": "Exporting encrypted XML payload strings stored in BSON into plain-text spreadsheet attachments without manual intervention or intermediate disk writes.",
+      "embedScriptUrl": "https://gist.github.com/raahoolkumeriya/fcb7aa4b780b70893fa770279fd1b127.js",
+      "gistUrl": "https://gist.github.com/raahoolkumeriya/fcb7aa4b780b70893fa770279fd1b127",
+      "tags": [
+        "MongoDB",
+        "Shell Script",
+        "JavaScript",
+        "BSON",
+        "Base64"
+      ],
+      "featured": true,
+      "date": "2022-04-10"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "ach-db-hackathon-2026",
+      "title": "DB Hackathon 2026 Winner",
+      "date": "July 2026",
+      "badge": "badge-purple",
+      "organization": "Deutsche Bank",
+      "description": "Eurorisk Deep Mind – AI CRO Command Center addressing European banking resilience & DORA compliance.",
+      "featured": true
+    },
+    {
+      "id": "ach-dementia-uk-2024",
+      "title": "Dementia UK Hackathon",
+      "date": "July 2024",
+      "badge": "badge-emerald",
+      "organization": "Dementia UK",
+      "description": "Special appreciation award for designing a data-driven healthcare operational tool.",
+      "featured": false
+    },
+    {
+      "id": "ach-oracle-exacc-2024",
+      "title": "Oracle Exa-CC Migration",
+      "date": "June 2024",
+      "badge": "badge-blue",
+      "organization": "Deutsche Bank",
+      "description": "Recognized for technical leadership and engineering excellence on enterprise database migration.",
+      "featured": false
+    },
+    {
+      "id": "ach-db-reward-2023",
+      "title": "Reward & Recognition Award",
+      "date": "October 2023",
+      "badge": "badge-amber",
+      "organization": "Deutsche Bank",
+      "description": "Conferred by Deutsche Bank for outstanding technical leadership and self-service automation.",
+      "featured": false
+    },
+    {
+      "id": "ach-gcp-hackathon-2023",
+      "title": "GCP Hackathon 2023",
+      "date": "July 2023",
+      "badge": "badge-emerald",
+      "organization": "Google Cloud",
+      "description": "Appreciation of the hybrid workplace management & time-series forecasting application.",
+      "featured": false
+    },
+    {
+      "id": "ach-streamlit-weekly-2021",
+      "title": "Streamlit Weekly Feature",
+      "date": "July 2021",
+      "badge": "badge-purple",
+      "organization": "Streamlit",
+      "description": "WhatsApp Chat Analysis application spotlighted in the official Streamlit weekly showcase.",
+      "featured": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-lang",
+      "badge": "Languages & Scripting",
+      "badgeColor": "badge-emerald",
+      "title": "Programming",
+      "description": "Python, Shell / Bash Scripting, SQL, PL/SQL, TypeScript, RESTful API Development"
+    },
+    {
+      "id": "skill-db",
+      "badge": "Database Platforms",
+      "badgeColor": "badge-blue",
+      "title": "Data Engines",
+      "description": "Oracle Exa-CC (Exadata Cloud@Customer), MongoDB, PostgreSQL, MySQL, Redis Caching"
+    },
+    {
+      "id": "skill-ai",
+      "badge": "Enterprise AI",
+      "badgeColor": "badge-purple",
+      "title": "AI & Frameworks",
+      "description": "LangGraph, Multi-Agent Swarms, Vector RAG, Streamlit, FastAPI, Ollama, Scikit-Learn"
+    },
+    {
+      "id": "skill-devops",
+      "badge": "DevOps & Cloud",
+      "badgeColor": "badge-amber",
+      "title": "Cloud & Automation",
+      "description": "Google Cloud (GCP), Ansible Playbooks, Docker Containers, OpenShift, Terraform, CI/CD"
+    }
+  ]
+}

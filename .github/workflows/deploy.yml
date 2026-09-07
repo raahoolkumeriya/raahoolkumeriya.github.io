@@ -23,6 +23,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync dynamic CMS to Markdown & static
+        run: |
+          node scripts/sync-static.js
+          mkdir -p static/data static/admin static/js
+          cp -r data/* static/data/ 2>/dev/null || true
+          cp -r public/admin/* static/admin/ 2>/dev/null || true
+          cp -r public/js/* static/js/ 2>/dev/null || true
+
       - name: Install Zola
         uses: taiki-e/install-action@v2
         with:
@@ -30,6 +43,13 @@ jobs:
 
       - name: Build with Zola (minified)
         run: zola build --minify
+
+      - name: Verify dynamic CMS assets in build
+        run: |
+          mkdir -p public/admin public/data public/js
+          cp -r static/admin/* public/admin/ 2>/dev/null || true
+          cp data/portfolio-data.json public/data/portfolio-data.json 2>/dev/null || true
+          cp static/js/dynamic-site.js public/js/dynamic-site.js 2>/dev/null || true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
