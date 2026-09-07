@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
+{% block description %}{{ section.description }}{% endblock description %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h1>{{ section.title }}</h1>
+      {% if section.description %}
+      <p>{{ section.description }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Render Markdown Body if present -->
+    {% if section.content %}
+    <div style="margin-bottom: 2.5rem;">
+      {{ section.content | safe }}
+    </div>
+    {% endif %}
+
+    <!-- If section has child pages (e.g. Projects) -->
+    {% if section.pages %}
+    <div class="grid-2">
+      {% for page in section.pages %}
+      <article class="card {% if loop.first %}card-featured{% endif %}">
+        {% if page.extra.badge %}
+        <span class="card-badge {% if loop.first %}badge-purple{% else %}badge-blue{% endif %}">
+          {{ page.extra.badge }}
+        </span>
+        {% endif %}
+        <h3>
+          <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </h3>
+        <p>{{ page.description }}</p>
+        <div class="card-footer">
+          <div class="tags-group">
+            {% if page.extra.tags %}
+              {% for tag in page.extra.tags %}
+              <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <div style="display: flex; gap: 0.6rem; align-items: center;">
+            {% if page.extra.github %}
+            <a class="btn btn-outline btn-sm" href="{{ page.extra.github }}" target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+            {% endif %}
+            <a class="btn btn-primary btn-sm" href="{{ page.permalink }}">
+              <span>Blueprint</span> <span class="arrow-icon">➔</span>
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock content %}

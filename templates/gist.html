@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
+{% block description %}{{ section.description }}{% endblock description %}
+
+{% block content %}
+<section class="section">
+  <div class="container" style="max-width: 920px;">
+    <div class="section-header">
+      <h1>{{ section.title }}</h1>
+      <p>{{ section.description }}</p>
+    </div>
+
+    <article class="card card-featured" style="padding: 2.5rem; margin-bottom: 2rem;">
+      <span class="card-badge badge-emerald" style="margin-bottom: 1.25rem;">Database &amp; Automation Solution</span>
+      <h2 style="font-size: 1.85rem; margin-bottom: 1.25rem;">
+        Decode Mongo Base64 Encrypted XML Data Strings
+      </h2>
+
+      <h3 style="font-size: 1.15rem; margin-top: 1rem; color: var(--accent-primary);">Automation Scenario</h3>
+      <p style="margin-bottom: 1rem;">
+        Shell script automation to execute MongoDB queries across heterogeneous database collections, generating operational reports at scheduled intervals and dispatching them via automated email attachments.
+      </p>
+
+      <h3 style="font-size: 1.15rem; margin-top: 1rem; color: var(--accent-amber);">The Engineering Challenge</h3>
+      <p style="margin-bottom: 1.5rem;">
+        Exporting encrypted XML payload strings stored in BSON into plain-text spreadsheet attachments without manual intervention or intermediate disk writes.
+      </p>
+
+      <div style="margin: 1.5rem 0; overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <script src="https://gist.github.com/raahoolkumeriya/fcb7aa4b780b70893fa770279fd1b127.js"></script>
+      </div>
+
+      <div class="card-footer" style="margin-top: 1.5rem;">
+        <div class="tags-group">
+          <span class="tag">MongoDB</span>
+          <span class="tag">Shell Script</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">BSON</span>
+          <span class="tag">Base64</span>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://gist.github.com/raahoolkumeriya/fcb7aa4b780b70893fa770279fd1b127" target="_blank" rel="noopener noreferrer">
+          <span>Open on GitHub Gist</span> ↗
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock content %}

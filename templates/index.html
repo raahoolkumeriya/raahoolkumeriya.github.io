@@ -1,0 +1,263 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="section">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left Column: Bio & Value Proposition -->
+      <div>
+        <div class="hero-tag">
+          <span class="beacon-dot"></span>
+          <span>⚡ <span class="tag-highlight">Senior Database Platform Engineer</span> &amp; AI Architect</span>
+        </div>
+        <h1 class="hero-title">
+          Architecting Resilient Data Platforms &amp; <span class="gradient-text">Enterprise Agentic AI</span>.
+        </h1>
+        <p class="hero-subtitle">
+          Assistant Vice President at <strong>Deutsche Bank</strong>. Specializing in mission-critical Oracle Exa-CC automation, Google Cloud Platform (GCP) infrastructure, and enterprise Agentic RAG architectures.
+        </p>
+        <div class="hero-cta-group">
+          <a class="btn btn-primary" href="/projects/">
+            <span>Explore Blueprints</span>
+            <span class="arrow-icon">➔</span>
+          </a>
+          <a class="btn btn-outline" href="/experience/">
+            <span>Career Journey</span>
+          </a>
+          <a class="btn btn-outline" href="{{ config.extra.resume }}" target="_blank" rel="noopener noreferrer">
+            <span>Resume ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Architecture Terminal -->
+      <div>
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <div class="terminal-tabs">
+              <button class="terminal-tab active" data-tab="pane-about">about_me.py</button>
+              <button class="terminal-tab" data-tab="pane-arch">architecture.yaml</button>
+              <button class="terminal-tab" data-tab="pane-milestones">milestones.json</button>
+            </div>
+            <div class="terminal-actions">
+              <button class="terminal-copy" id="terminal-copy-btn" onclick="copyTerminalContent()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="terminal-body">
+            <!-- Pane 1: Python Profile -->
+            <div class="tab-pane active" id="pane-about">
+              <div><span class="syn-keyword">class</span> <span class="syn-func">PlatformEngineer</span><span class="syn-sym">:</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-doc">"""Enterprise Data Infrastructure &amp; Agentic AI Architect"""</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-keyword">def</span> <span class="syn-func">__init__</span><span class="syn-sym">(</span><span class="syn-key">self</span><span class="syn-sym">):</span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="syn-key">self</span><span class="syn-sym">.</span>role <span class="syn-sym">=</span> <span class="syn-str">"Assistant Vice President"</span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="syn-key">self</span><span class="syn-sym">.</span>organization <span class="syn-sym">=</span> <span class="syn-str">"Deutsche Bank"</span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="syn-key">self</span><span class="syn-sym">.</span>focus <span class="syn-sym">=</span> <span class="syn-sym">[</span><span class="syn-str">"Oracle Exa-CC"</span><span class="syn-sym">,</span> <span class="syn-str">"GCP Cloud"</span><span class="syn-sym">,</span> <span class="syn-str">"Agentic AI"</span><span class="syn-sym">]</span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="syn-key">self</span><span class="syn-sym">.</span>socials <span class="syn-sym">=</span> <span class="syn-sym">{</span></div>
+              <div class="terminal-socials">
+                <a href="{{ config.extra.github }}" target="_blank" class="terminal-social-link">GitHub ↗</a>
+                <a href="{{ config.extra.linkedin }}" target="_blank" class="terminal-social-link">LinkedIn ↗</a>
+                <a href="{{ config.extra.twitter }}" target="_blank" class="terminal-social-link">X / Twitter ↗</a>
+                <a href="{{ config.extra.medium }}" target="_blank" class="terminal-social-link">Medium ↗</a>
+              </div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="syn-sym">}</span></div>
+            </div>
+
+            <!-- Pane 2: Architecture Blueprint -->
+            <div class="tab-pane" id="pane-arch">
+              <div><span class="syn-comment"># Enterprise Production Architecture</span></div>
+              <div><span class="syn-key">system_name</span><span class="syn-sym">:</span> <span class="syn-str">"Eurorisk Deep Mind &amp; Exa-CC Platform"</span></div>
+              <div><span class="syn-key">tier</span><span class="syn-sym">:</span> <span class="syn-str">"Tier-1 Mission Critical"</span></div>
+              <div><span class="syn-key">pillars</span><span class="syn-sym">:</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-key">database</span><span class="syn-sym">:</span> <span class="syn-sym">[</span><span class="syn-str">"Oracle Exa-CC"</span><span class="syn-sym">,</span> <span class="syn-str">"MongoDB"</span><span class="syn-sym">,</span> <span class="syn-str">"PostgreSQL"</span><span class="syn-sym">]</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-key">cloud_infra</span><span class="syn-sym">:</span> <span class="syn-str">"Google Cloud Platform (GCP)"</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-key">ai_orchestration</span><span class="syn-sym">:</span> <span class="syn-str">"LangGraph Multi-Agent RAG"</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-key">automation</span><span class="syn-sym">:</span> <span class="syn-sym">[</span><span class="syn-str">"Ansible"</span><span class="syn-sym">,</span> <span class="syn-str">"Docker"</span><span class="syn-sym">,</span> <span class="syn-str">"CI/CD Pipelines"</span><span class="syn-sym">]</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-key">compliance</span><span class="syn-sym">:</span> <span class="syn-str">"DORA (Digital Operational Resilience Act)"</span></div>
+            </div>
+
+            <!-- Pane 3: Milestones & Achievements -->
+            <div class="tab-pane" id="pane-milestones">
+              <div><span class="syn-sym">{</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-key">"hackathon_winner_2026"</span><span class="syn-sym">:</span> <span class="syn-str">"DB Hackathon 1st Place (Eurorisk Deep Mind)"</span><span class="syn-sym">,</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-key">"total_experience"</span><span class="syn-sym">:</span> <span class="syn-str">"12+ Years Enterprise Platforms"</span><span class="syn-sym">,</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-key">"leadership_awards"</span><span class="syn-sym">:</span> <span class="syn-sym">[</span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="syn-str">"Oracle Exa-CC Leadership Recognition (2024)"</span><span class="syn-sym">,</span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="syn-str">"Deutsche Bank Reward &amp; Recognition (2023)"</span><span class="syn-sym">,</span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="syn-str">"Dementia UK Special Recognition Award"</span></div>
+              <div>&nbsp;&nbsp;<span class="syn-sym">]</span></div>
+              <div><span class="syn-sym">}</span></div>
+            </div>
+          </div>
+
+          <div class="terminal-footer">
+            <span>rahul@cloud:~/portfolio$ python3 -m bio</span>
+            <span id="terminal-file-status">about_me.py</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metrics / Proof Points Strip -->
+    <div class="metrics-strip">
+      <div class="metric-card">
+        <div class="metric-val">12+ Years</div>
+        <div class="metric-label">Enterprise Platform &amp; DB Infrastructure</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">Zero-Touch</div>
+        <div class="metric-label">Oracle Exa-CC Deployment Automation</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">1st Place</div>
+        <div class="metric-label">DB Hackathon 2026 Winner (Eurorisk Deep Mind)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">Mission-Critical</div>
+        <div class="metric-label">High-Resilience Banking Architectures</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="section" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); background: var(--bg-card-subtle);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Engineering Blueprints</h2>
+      <p>Architectural prototypes, AI hackathon solutions, and mission-critical automation systems</p>
+    </div>
+
+    <div class="grid-3">
+      {% set projects_section = get_section(path="projects/_index.md") %}
+      {% for page in projects_section.pages %}
+      {% if loop.index <= 3 %}
+      <article class="card {% if loop.first %}card-featured{% endif %}">
+        {% if page.extra.badge %}
+        <span class="card-badge {% if loop.first %}badge-purple{% else %}badge-blue{% endif %}">
+          {{ page.extra.badge }}
+        </span>
+        {% endif %}
+        <h3>
+          <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </h3>
+        <p>{{ page.description }}</p>
+        <div class="card-footer">
+          <div class="tags-group">
+            {% if page.extra.tags %}
+              {% for tag in page.extra.tags %}
+              <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <a class="btn btn-outline btn-sm" href="{{ page.permalink }}">
+            <span>Blueprint</span> <span class="arrow-icon">➔</span>
+          </a>
+        </div>
+      </article>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a class="btn btn-primary" href="/projects/">
+        <span>View All Projects Archive</span>
+        <span class="arrow-icon">➔</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Skills & Technology Stack Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Skills &amp; Technology Stack</h2>
+      <p>Core engineering capabilities for high-availability enterprise data platforms and agentic AI</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card">
+        <span class="card-badge badge-emerald">Languages &amp; Scripting</span>
+        <h3>Programming</h3>
+        <p>Python, Shell / Bash Scripting, SQL, PL/SQL, TypeScript, RESTful API Development</p>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-blue">Database Platforms</span>
+        <h3>Data Engines</h3>
+        <p>Oracle Exa-CC (Exadata Cloud@Customer), MongoDB, PostgreSQL, MySQL, Redis Caching</p>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-purple">Enterprise AI</span>
+        <h3>AI &amp; Frameworks</h3>
+        <p>LangGraph, Multi-Agent Swarms, Vector RAG, Streamlit, FastAPI, Ollama, Scikit-Learn</p>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-amber">DevOps &amp; Cloud</span>
+        <h3>Cloud &amp; Automation</h3>
+        <p>Google Cloud (GCP), Ansible Playbooks, Docker Containers, OpenShift, Terraform, CI/CD</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Awards & Milestones Section -->
+<section class="section" style="border-top: 1px solid var(--border-color); background: var(--bg-card-subtle);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Awards &amp; Milestones</h2>
+      <p>Recognitions across international hackathons, mission-critical migrations, and operational leadership</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card card-featured">
+        <span class="card-badge badge-purple">July 2026</span>
+        <h3>DB Hackathon 2026 Winner</h3>
+        <p>Eurorisk Deep Mind – AI CRO Command Center addressing European banking resilience &amp; DORA compliance.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-emerald">July 2024</span>
+        <h3>Dementia UK Hackathon</h3>
+        <p>Special appreciation award for designing a data-driven healthcare operational tool.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-blue">June 2024</span>
+        <h3>Oracle Exa-CC Migration</h3>
+        <p>Recognized for technical leadership and engineering excellence on enterprise database migration.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-amber">October 2023</span>
+        <h3>Reward &amp; Recognition Award</h3>
+        <p>Conferred by Deutsche Bank for outstanding technical leadership and self-service automation.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-emerald">July 2023</span>
+        <h3>GCP Hackathon 2023</h3>
+        <p>Appreciation of the hybrid workplace management &amp; time-series forecasting application.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-purple">July 2021</span>
+        <h3>Streamlit Weekly Feature</h3>
+        <p>WhatsApp Chat Analysis application spotlighted in the official Streamlit weekly showcase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

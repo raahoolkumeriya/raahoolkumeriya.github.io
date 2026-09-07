@@ -1,0 +1,37 @@
+# ==============================================================================
+# Zola Configuration (Rust Static Site Generator)
+# ==============================================================================
+
+base_url = "https://raahoolkumeriya.github.io"
+title = "Rahul Kumeriya"
+description = "Senior Database Platform Engineer, Cloud & AI Systems Architect"
+default_language = "en"
+minify_html = true
+compile_sass = false
+build_search_index = false
+
+[markdown]
+render_emoji = true
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+author = "Rahul Kumeriya"
+role = "Senior Database Platform Engineer"
+company = "Deutsche Bank"
+location = "Pune, India"
+avatar = "static/images/developer_activity.fc9f8bef8cc2.svg"
+github = "https://github.com/raahoolkumeriya"
+linkedin = "https://www.linkedin.com/in/rahulkumeriya"
+twitter = "https://x.com/KumeriyaRahul"
+medium = "https://rahulkumeriya.medium.com"
+resume = "https://docs.google.com/document/d/1aeDuwuT_fwPFJxc80L2BTWPmobYejq1lXNL7ccZJt3w/edit?usp=sharing"
+contact = "https://raahoolkumeriya.github.io/connectme/"
+
+menu = [
+    { name = "Home", url = "/" },
+    { name = "Projects", url = "/projects/" },
+    { name = "Experience", url = "/experience/" },
+    { name = "Gist", url = "/gist/" }
+]

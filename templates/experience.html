@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
+{% block description %}{{ section.description }}{% endblock description %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h1>{{ section.title }}</h1>
+      <p>{{ section.description }}</p>
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+        <a class="btn btn-primary btn-sm" href="https://docs.google.com/document/d/e/2PACX-1vT7EwryeU_O4KMbSNZL6D7YKBedkC4qZADnUG7W5M_6dsyAvcP9tVBizW0AaFKIRQLX6J5txBkyTWNI/pub" target="_blank" rel="noopener noreferrer">
+          <span>View Resume (Docs)</span> ↗
+        </a>
+        <a class="btn btn-outline btn-sm" href="https://docs.google.com/document/d/e/2PACX-1vRJqPJ74Hvo_P2QztoQNwCWEUwyGlwU0-0nggsQhlwxea8N-xQbX0EO6Q2b56EStPtPWtYZ28LbpWYU/pub" target="_blank" rel="noopener noreferrer">
+          <span>View Full CV</span> ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <!-- 1. Deutsche Bank (AVP) -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">
+          <span>July 2022 – Present</span> • <span>4 yrs, 1 mo</span>
+        </div>
+        <div class="card card-featured">
+          <div class="company-header">
+            <img src="{{ get_url(path='images/deutsche-bank.svg') }}" alt="Deutsche Bank" class="company-logo">
+            <div class="company-title-wrap">
+              <h3>Deutsche Bank</h3>
+              <span class="role-pill">Assistant Vice President</span>
+              <span class="role-location">Pune, India</span>
+            </div>
+          </div>
+          <p>Lead platform engineer and AI architect focusing on enterprise self-service database automation, cloud infrastructure, and high-resilience AI systems.</p>
+          <ul style="margin-left: 1.25rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Cloud &amp; AI Engineering Leadership:</strong> Lead Google Cloud Platform (GCP) Engineer and AI Developer, architecting self-service <strong>Agentic RAG (Retrieval-Augmented Generation)</strong> tools to automate enterprise workflows.</li>
+            <li><strong>Hackathon Innovation:</strong> Creator of <strong>Eurorisk Deep Mind</strong> for Deutsche Bank Hackathon 2026 (<em>"Powering the European Champion of the Future with AI"</em>) featuring autonomous risk shock agents and DORA compliance analytics.</li>
+            <li><strong>Database &amp; Platform Automation:</strong> Technical architect for Oracle ExaCC platform self-service automation workflows, significantly reducing deployment turnaround times and manual operational overhead.</li>
+          </ul>
+          <div class="card-footer">
+            <div class="tags-group">
+              <span class="tag">Agentic RAG</span>
+              <span class="tag">GCP</span>
+              <span class="tag">Oracle ExaCC</span>
+              <span class="tag">Python</span>
+              <span class="tag">Ansible</span>
+              <span class="tag">OpenShift</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">DORA Compliance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Citi Corps -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">
+          <span>June 2020 – July 2022</span> • <span>2 years</span>
+        </div>
+        <div class="card">
+          <div class="company-header">
+            <img src="{{ get_url(path='images/citi.svg') }}" alt="Citi Corps" class="company-logo">
+            <div class="company-title-wrap">
+              <h3>Citi Corps Service India Pvt Ltd</h3>
+              <span class="role-pill">Officer</span>
+              <span class="role-location">Pune, India</span>
+            </div>
+          </div>
+          <p>Continuous delivery and DevOps engineering across mission-critical global payments platforms.</p>
+          <ul style="margin-left: 1.25rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Payment Domain Automation:</strong> Senior Automation Engineer responsible for end-to-end continuous delivery frameworks and rapid-release tooling across global payment systems.</li>
+            <li><strong>DevOps Delivery Tools:</strong> Designed and deployed ADHOC package delivery automation tools using IBM UrbanCode Deploy (uDeploy), Python, and MongoDB microservices.</li>
+          </ul>
+          <div class="card-footer">
+            <div class="tags-group">
+              <span class="tag">Payments Domain</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Python</span>
+              <span class="tag">uDeploy</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Oracle Database</span>
+              <span class="tag">Shell Scripting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Deutsche Bank (Associate) -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">
+          <span>October 2017 – July 2020</span> • <span>2 yrs, 8 mos</span>
+        </div>
+        <div class="card">
+          <div class="company-header">
+            <img src="{{ get_url(path='images/deutsche-bank.svg') }}" alt="Deutsche Bank" class="company-logo">
+            <div class="company-title-wrap">
+              <h3>Deutsche Bank</h3>
+              <span class="role-pill">Associate</span>
+              <span class="role-location">Pune, India</span>
+            </div>
+          </div>
+          <p>DevOps automation, containerized collateral management systems, and enterprise data analytics pipelines.</p>
+          <ul style="margin-left: 1.25rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Enterprise Ansible DevOps:</strong> Core member of the Ansible DevOps team, engineering automation playbooks that achieved over <strong>2,000 hours of manual effort savings annually</strong> across enterprise operations. Conducted RedHat Ansible training programs.</li>
+            <li><strong>Production Engineering &amp; Collateral Management:</strong> Built and supported high-availability OpenShift microservice container deployments for global collateral management and valuation systems.</li>
+            <li><strong>Data Science &amp; AI/ML Projects:</strong> Developed machine learning pipelines analyzing Jira organizational behavior, incident tickets, change requests, and problem tickets to optimize support workflows.</li>
+          </ul>
+          <div class="card-footer">
+            <div class="tags-group">
+              <span class="tag">Ansible</span>
+              <span class="tag">OpenShift</span>
+              <span class="tag">Data Science &amp; ML</span>
+              <span class="tag">Collateral Management</span>
+              <span class="tag">Control-M</span>
+              <span class="tag">ITRS</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Cognizant -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">
+          <span>March 2016 – October 2017</span> • <span>1 yr, 7 mos</span>
+        </div>
+        <div class="card">
+          <div class="company-header">
+            <img src="{{ get_url(path='images/cognizant.svg') }}" alt="Cognizant" class="company-logo">
+            <div class="company-title-wrap">
+              <h3>Cognizant</h3>
+              <span class="role-pill">Technical Lead</span>
+              <span class="role-location">Pune, India</span>
+            </div>
+          </div>
+          <p>Technical leadership overseeing enterprise regulatory and compliance applications.</p>
+          <ul style="margin-left: 1.25rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Compliance Platform Leadership:</strong> Technical Lead overseeing continuous monitoring and support across <strong>52+ mission-critical Class A to Class D compliance applications</strong>.</li>
+            <li><strong>Automated Monitoring Dashboards:</strong> Designed real-time monitoring dashboards to detect application failures and infrastructure bottlenecks proactively.</li>
+          </ul>
+          <div class="card-footer">
+            <div class="tags-group">
+              <span class="tag">Compliance Management</span>
+              <span class="tag">Automation</span>
+              <span class="tag">Autosys</span>
+              <span class="tag">Oracle Database</span>
+              <span class="tag">Python</span>
+              <span class="tag">Shell Scripting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Tata Consultancy Services -->
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">
+          <span>December 2012 – March 2016</span> • <span>3 yrs, 3 mos</span>
+        </div>
+        <div class="card">
+          <div class="company-header">
+            <img src="{{ get_url(path='images/tcs.svg') }}" alt="Tata Consultancy Services" class="company-logo">
+            <div class="company-title-wrap">
+              <h3>Tata Consultancy Services</h3>
+              <span class="role-pill">System Engineer</span>
+              <span class="role-location">Pune / Trivandrum</span>
+            </div>
+          </div>
+          <p>Financial risk systems, regulatory reporting pipelines, and financial reconciliation tooling.</p>
+          <ul style="margin-left: 1.25rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Banking Risk &amp; Regulatory Reporting:</strong> Developed Market Risk reporting tools for Morgan Stanley and Axiom regulatory reporting environments for Deutsche Bank (TES).</li>
+            <li><strong>Reconciliation Engineering:</strong> Built financial reconciliation pipelines using Barclays Intellimatch platform.</li>
+            <li><strong>TCS Initial Learning Program (Trivandrum):</strong> Completed intensive software engineering, mainframe, and database systems training.</li>
+          </ul>
+          <div class="card-footer">
+            <div class="tags-group">
+              <span class="tag">Market Risk Reporting</span>
+              <span class="tag">AXIOM</span>
+              <span class="tag">Barclays Intellimatch</span>
+              <span class="tag">Oracle Database</span>
+              <span class="tag">Autosys</span>
+              <span class="tag">Shell Scripting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
