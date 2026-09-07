@@ -1,2 +1,5 @@
 .DS_Store
-public/
+node_modules/
+.env
+.env.local
+.env.*.local

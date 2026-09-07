@@ -8,10 +8,11 @@ date = 2026-07-15
 badge = "DB Hackathon 2026 Winner"
 github = "https://github.com/raahoolkumeriya/hackathon2026-AI"
 video = "https://www.youtube.com/embed/YBAGdg4EW3U"
-tags = ["Deutsche Bank", "AI / LLMs", "GCP", "Python", "FinTech", "DORA"]
+
+tags = ["Deutsche Bank", "AI / LLMs", "LangGraph", "GCP", "Python", "FinTech", "DORA"]
 +++
 
-## Executive Summary
+### Executive Summary
 
 Developed as part of the **Deutsche Bank Hackathon 2026**, **Eurorisk Deep Mind** addresses the European banking sector's 2026–2028 supervisory priorities: navigating geopolitical volatility, cyber resilience, and strict compliance with the **Digital Operational Resilience Act (DORA)**.
 

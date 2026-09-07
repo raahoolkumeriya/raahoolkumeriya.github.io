@@ -7,10 +7,12 @@ date = 2021-09-15
 [extra]
 badge = "Streamlit Weekly Feature"
 github = "https://github.com/raahoolkumeriya/whatsapp-chat-streamlit"
+
+
 tags = ["Streamlit", "Data Science", "NLP", "Pandas", "Python", "Data Visualization"]
 +++
 
-## Overview
+### Overview
 
 An interactive Natural Language Processing (NLP) and exploratory data analysis application designed to parse and visualize exported conversation transcripts from both **iOS** and **Android** WhatsApp clients. It extracts granular communication dynamics, temporal interaction heatmaps, emoji sentiment distributions, and linguistic word clouds.
 

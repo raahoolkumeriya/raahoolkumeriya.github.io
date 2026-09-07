@@ -7,10 +7,12 @@ date = 2023-07-20
 [extra]
 badge = "GCP Hackathon 2023"
 github = "https://github.com/raahoolkumeriya/hackathon2023"
+
+
 tags = ["GCP", "Machine Learning", "Time Series", "Streamlit", "Python", "Facebook Prophet"]
 +++
 
-## Overview
+### Overview
 
 Developed during the **Google Cloud Platform (GCP) Hackathon 2023**, this system delivers an intelligent time-series forecasting application designed to tackle post-pandemic hybrid workplace challenges. By accurately forecasting office attendance, cafeteria food catering demand, and hot-desk utilization, organizations can optimize facilities operational expenditure while enhancing employee workplace satisfaction.
 

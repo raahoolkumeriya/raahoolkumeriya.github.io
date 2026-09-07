@@ -1,51 +1,78 @@
-# Rahul Kumeriya – Portfolio
+# Rahul Kumeriya – Portfolio & Admin Control Studio
 
-> **Blazing-Fast, Responsive Portfolio Powered by Rust & [Zola](https://www.getzola.org/)**
+> **Dynamic Cloud & AI Portfolio with Real-Time Authenticated Admin CMS**
 
 [![Deploy Zola to GitHub Pages](https://github.com/raahoolkumeriya/raahoolkumeriya.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/raahoolkumeriya/raahoolkumeriya.github.io/actions/workflows/deploy.yml)
-[![Built with Zola](https://img.shields.io/badge/Built_with-Zola_(Rust)-orange?logo=rust)](https://www.getzola.org/)
+[![Node.js Express](https://img.shields.io/badge/Backend-Node.js%20Express-green?logo=node.js)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## ⚡ Performance Highlights
+## ⚡ Key Highlights
 
-- **Rust-Fast Compilation**: Generates the entire website and sitemap in **< 60 milliseconds**.
-- **Ultra-Lightweight Payload**: Zero JavaScript framework overhead (No React, Next.js, or Semantic UI bloat).
-- **Zero-Dependency CSS**: Clean, modern CSS with native CSS Grid, Flexbox, and Dark/Light mode tokens (**< 15 KB** total).
-- **Responsive & Accessible**: Native mobile navigation drawer, fluid typography, and accessible color contrast.
+- **Dynamic Content Rendering**: Real-time rendering of Projects, Career Experience, Gists, and Achievements.
+- **Admin Control Studio (`/admin`)**: Dedicated, authenticated CMS to add, modify, reorder, or delete projects, career history, gists, and awards.
+- **Environment Variables Security**: Admin secrets (`ADMIN_USERNAME`, `ADMIN_PASSWORD`, `JWT_SECRET`) strictly configured via `.env` and kept private.
+- **Search & Tag Filters**: Instant client-side search and tag filtering across engineering blueprints.
+- **Static Export Tool**: `npm run sync-to-static` synchronizes dynamic database changes back into static Markdown/Zola files whenever you want to deploy static snapshots to GitHub Pages.
 
 ---
 
 ## 🏗️ Architecture
 
 ```
-├── .github/workflows/
-│   └── deploy.yml          # GitHub Actions CI/CD for automated GitHub Pages deployment
-├── content/
-│   ├── _index.md           # Homepage configuration
-│   ├── experience/         # Career timeline & leadership milestones
-│   ├── gist/               # Technical snippets & MongoDB script solutions
-│   └── projects/           # Architectural blueprints & hackathon systems
-├── static/
-│   ├── css/style.css       # Unified design system & responsive layout (<15KB)
-│   ├── js/main.js          # Lightweight theme switcher & terminal helpers (<2KB)
-│   └── images/             # Vector icons and SVG illustrations
-├── templates/
-│   ├── base.html           # Master layout, SEO meta tags, and footer
-│   ├── index.html          # Hero section, interactive terminal, skills & awards
-│   ├── section.html        # Generic listing template
-│   ├── page.html           # Project detail blueprint with YouTube embeds
-│   ├── experience.html     # Interactive vertical career timeline
-│   ├── gist.html           # Gist showcase with embedded script
-│   └── 404.html            # Custom responsive 404 error page
-├── zola.toml               # Site metadata, navigation menus, and markdown config
-└── README.md
+├── data/
+│   └── portfolio-data.json # Dynamic persistent data store
+├── public/                 # Dynamic public frontend & Admin Studio
+│   ├── index.html          # Dynamic homepage (Hero, Terminal, Metrics, Awards)
+│   ├── projects/index.html # Filterable Projects archive with blueprint viewer
+│   ├── experience/         # Career timeline with milestone highlights
+│   ├── gist/               # Technical gists & code solution embeds
+│   ├── admin/              # Authenticated Admin Control Studio
+│   │   ├── index.html      # Admin dashboard & modal forms
+│   │   ├── admin.css       # Studio glassmorphism UI styles
+│   │   └── admin.js        # Auth controller, JWT handler, and CRUD client
+│   └── js/dynamic-site.js  # Unified client rendering & search engine
+├── scripts/
+│   └── sync-static.js      # Utility to sync dynamic data to static files
+├── server.js               # Express API backend with JWT authentication
+├── .env.example            # Environment configuration template
+├── package.json            # Node.js dependencies and scripts
+├── static/                 # Stylesheets, vector assets, company logos
+└── templates/              # Zola static layout templates
 ```
 
 ---
 
-## 🚀 Local Development
+## 🚀 Running the Dynamic Portfolio & Admin CMS
+
+### 1. Environment Configuration
+
+Copy the example configuration:
+
+```bash
+cp .env.example .env
+```
+
+Configure your admin secrets inside `.env`:
+
+```env
+PORT=3000
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=YourStrongPasswordHere!
+JWT_SECRET=your_super_secret_jwt_signing_key_here
+```
+
+### 2. Launch Local Server
+
+```bash
+npm install
+npm run dev
+```
+
+Visit:
+- **Public Portfolio**: [http://localhost:3000](http://localhost:3000)
+- **Admin Control Studio**: [http://localhost:3000/admin](http://localhost:3000/admin)
 
 ### Prerequisites
 

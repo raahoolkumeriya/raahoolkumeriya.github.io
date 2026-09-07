@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Technical Gists &amp; Snippets | Rahul Kumeriya</title>
+  <meta name="description" content="Quick code solutions, database automation snippets, and operational scripts.">
+  <meta name="author" content="Rahul Kumeriya">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/static/images/favicon.43d06173d002.ico" type="image/png">
+
+  <!-- Modern Design System CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <!-- Early Dark Mode Detection -->
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch(e){}
+  </script>
+</head>
+<body>
+
+  <!-- Floating Glassmorphic Navigation -->
+  <nav class="site-nav">
+    <div class="container nav-wrapper">
+      <a class="nav-brand" href="/">
+        <div class="nav-logo-icon">RK</div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">Rahul Kumeriya</span>
+          <span class="nav-brand-sub"><span class="beacon-dot"></span> AVP @ Deutsche Bank</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/projects/">Projects</a></li>
+        <li><a class="nav-link" href="/experience/">Experience</a></li>
+        <li><a class="nav-link active" href="/gist/">Gist</a></li>
+        <li>
+          <a class="nav-link" href="https://docs.google.com/document/d/1aeDuwuT_fwPFJxc80L2BTWPmobYejq1lXNL7ccZJt3w/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/admin/" style="color: var(--accent-primary); font-weight: 600;">Admin 🔐</a>
+        </li>
+        <li class="nav-mobile-only">
+          <a class="btn btn-primary btn-sm nav-mobile-cta" href="https://raahoolkumeriya.github.io/connectme/">Connect with Me ➔</a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav-connect-btn" href="https://raahoolkumeriya.github.io/connectme/">Connect</a>
+        <button class="btn-icon nav-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg class="hamburger-icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="close-icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Main Content Block -->
+  <main id="main-content">
+    <section class="section">
+      <div class="container" style="max-width: 920px;">
+        <div class="section-header">
+          <h1>Technical Gists &amp; Snippets</h1>
+          <p>Quick code solutions, database automation snippets, and operational scripts.</p>
+        </div>
+
+        <!-- Dynamic Gists List -->
+        <div id="gists-list-container">
+          <!-- Populated dynamically by dynamic-site.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-socials">
+        <a class="footer-social-link" href="https://github.com/raahoolkumeriya" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="footer-social-link" href="https://www.linkedin.com/in/rahulkumeriya" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer-social-link" href="https://x.com/KumeriyaRahul" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        <a class="footer-social-link" href="https://rahulkumeriya.medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
+        <a class="footer-social-link" href="/admin/" style="color: var(--accent-primary);">Admin CMS</a>
+      </div>
+      <p class="footer-copy">
+        © 2026 Rahul Kumeriya • Automation Scripts &amp; Real-Time Admin CMS
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/static/js/main.js"></script>
+  <script src="/js/dynamic-site.js"></script>
+</body>
+</html>

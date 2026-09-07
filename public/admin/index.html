@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Control Studio | Rahul Kumeriya</title>
+  <link rel="shortcut icon" href="/static/images/favicon.43d06173d002.ico" type="image/png">
+
+  <!-- Core & Admin CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+
+  <!-- Early Dark Mode Detection -->
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch(e){}
+  </script>
+</head>
+<body class="admin-body">
+
+  <!-- Login Modal / Card Overlay -->
+  <div id="login-overlay">
+    <div class="login-card">
+      <div class="login-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <div class="login-header">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Admin Control Studio</h2>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+          Authenticate to manage projects, gists, experience, and achievements.
+        </p>
+      </div>
+
+      <div id="login-alert" class="login-alert"></div>
+
+      <form id="login-form">
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label" for="login-username">Admin Username</label>
+          <input type="text" id="login-username" class="form-input" placeholder="admin" required autocomplete="username">
+        </div>
+
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label" for="login-password">Admin Password / Secret Key</label>
+          <input type="password" id="login-password" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" id="login-submit-btn" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+          <span>Authenticate &amp; Enter Studio</span>
+          <span class="arrow-icon">➔</span>
+        </button>
+      </form>
+
+      <div style="margin-top: 1.75rem; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 1rem;">
+        <span>🔒 Protected by environment variables in <code>.env</code></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Admin Navbar -->
+  <header class="admin-navbar">
+    <div class="container admin-nav-container">
+      <div class="admin-brand">
+        <div class="nav-logo-icon">RK</div>
+        <div>
+          <div style="font-weight: 700; font-size: 1.05rem;">Rahul Kumeriya Studio</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">Dynamic Portfolio CMS</div>
+        </div>
+        <span class="admin-badge-env">
+          <span class="beacon-dot"></span> Online
+        </span>
+      </div>
+
+      <div class="admin-nav-actions">
+        <a href="/" target="_blank" class="btn btn-outline btn-sm">
+          <span>View Live Site</span> ↗
+        </a>
+        <button class="btn-icon" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="btn btn-outline btn-sm" id="btn-logout" style="border-color: #ef4444; color: #ef4444;">
+          Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Tabs Bar -->
+  <nav class="admin-tabs-bar">
+    <div class="container">
+      <ul class="admin-tabs-list">
+        <li>
+          <button class="admin-tab-btn active" data-tab="pane-projects">
+            <span>📁 Projects</span>
+            <span class="tab-count-badge" id="badge-count-projects">0</span>
+          </button>
+        </li>
+        <li>
+          <button class="admin-tab-btn" data-tab="pane-experience">
+            <span>💼 Experience</span>
+            <span class="tab-count-badge" id="badge-count-experience">0</span>
+          </button>
+        </li>
+        <li>
+          <button class="admin-tab-btn" data-tab="pane-gists">
+            <span>💡 Gists &amp; Snippets</span>
+            <span class="tab-count-badge" id="badge-count-gists">0</span>
+          </button>
+        </li>
+        <li>
+          <button class="admin-tab-btn" data-tab="pane-achievements">
+            <span>🏆 Achievements</span>
+            <span class="tab-count-badge" id="badge-count-achievements">0</span>
+          </button>
+        </li>
+        <li>
+          <button class="admin-tab-btn" data-tab="pane-profile">
+            <span>⚙️ Hero &amp; Terminal Studio</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content Workspaces -->
+  <main class="admin-content-area container">
+    
+    <!-- 1. Projects Workspace -->
+    <section class="admin-pane active" id="pane-projects">
+      <div class="admin-section-header">
+        <div class="admin-section-title">
+          <h2>Engineering Blueprints &amp; Projects</h2>
+          <p>Create, update, or remove projects. Changes render in real-time on the live site.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openProjectAdd()">
+          <span>+ Add New Project</span>
+        </button>
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th style="width: 32%;">Project Title</th>
+              <th>Badge</th>
+              <th>Tags</th>
+              <th style="text-align: center;">Order</th>
+              <th>Featured</th>
+              <th style="width: 15%;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projects-table-body">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2. Experience Workspace -->
+    <section class="admin-pane" id="pane-experience">
+      <div class="admin-section-header">
+        <div class="admin-section-title">
+          <h2>Career Timeline &amp; Experience</h2>
+          <p>Add new roles or modify previous milestones, accomplishments, and tech stacks.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openExperienceAdd()">
+          <span>+ Add Experience Milestone</span>
+        </button>
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th style="width: 30%;">Company &amp; Location</th>
+              <th>Role</th>
+              <th>Timeline</th>
+              <th>Highlights</th>
+              <th style="width: 15%;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="experience-table-body">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. Gists Workspace -->
+    <section class="admin-pane" id="pane-gists">
+      <div class="admin-section-header">
+        <div class="admin-section-title">
+          <h2>Technical Gists &amp; Script Solutions</h2>
+          <p>Manage code snippets, database automation scripts, and GitHub Gist embeds.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openGistAdd()">
+          <span>+ Add New Gist</span>
+        </button>
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th style="width: 45%;">Gist Title &amp; Category</th>
+              <th>Tags</th>
+              <th>Link</th>
+              <th style="width: 15%;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="gists-table-body">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. Achievements Workspace -->
+    <section class="admin-pane" id="pane-achievements">
+      <div class="admin-section-header">
+        <div class="admin-section-title">
+          <h2>Awards, Honors &amp; Hackathon Wins</h2>
+          <p>Showcase leadership awards, international hackathons, and certifications.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openAchievementAdd()">
+          <span>+ Add Award / Milestone</span>
+        </button>
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th style="width: 40%;">Award / Milestone</th>
+              <th>Organization</th>
+              <th>Date Badge</th>
+              <th>Spotlight</th>
+              <th style="width: 15%;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="achievements-table-body">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5. Profile & Terminal Workspace -->
+    <section class="admin-pane" id="pane-profile">
+      <div class="admin-section-header">
+        <div class="admin-section-title">
+          <h2>Hero Headline, Terminal Panes &amp; Metrics</h2>
+          <p>Customize the homepage bio, interactive architecture terminal code, and metric counters.</p>
+        </div>
+      </div>
+
+      <form id="profile-form">
+        <div class="card" style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1.25rem;">Hero Section Details</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="profile-heroTagline">Hero Beacon Tagline</label>
+            <input type="text" id="profile-heroTagline" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="profile-heroTitle">Hero Title (HTML supported)</label>
+            <input type="text" id="profile-heroTitle" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="profile-heroSubtitle">Hero Subtitle (HTML supported)</label>
+            <textarea id="profile-heroSubtitle" class="form-textarea" rows="3"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="profile-resumeUrl">Resume Google Docs URL</label>
+              <input type="url" id="profile-resumeUrl" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="profile-fullCvUrl">Full CV Google Docs URL</label>
+              <input type="url" id="profile-fullCvUrl" class="form-input">
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1.25rem;">Proof Points / Metrics Strip</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Metric 1 (Value &amp; Label)</label>
+              <input type="text" id="metric-val-1" class="form-input" style="margin-bottom: 0.5rem;" placeholder="12+ Years">
+              <input type="text" id="metric-lbl-1" class="form-input" placeholder="Platform & DB Infrastructure">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Metric 2 (Value &amp; Label)</label>
+              <input type="text" id="metric-val-2" class="form-input" style="margin-bottom: 0.5rem;" placeholder="Zero-Touch">
+              <input type="text" id="metric-lbl-2" class="form-input" placeholder="Oracle Exa-CC Automation">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Metric 3 (Value &amp; Label)</label>
+              <input type="text" id="metric-val-3" class="form-input" style="margin-bottom: 0.5rem;" placeholder="Mission-Critical">
+              <input type="text" id="metric-lbl-3" class="form-input" placeholder="High-Resilience Architectures">
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1.25rem;">Interactive Terminal Panes</h3>
+          <div class="form-group">
+            <label class="form-label">about_me.py</label>
+            <textarea id="profile-term-about" class="form-textarea code-editor" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">architecture.yaml</label>
+            <textarea id="profile-term-arch" class="form-textarea code-editor" rows="7"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">milestones.json</label>
+            <textarea id="profile-term-milestones" class="form-textarea code-editor" rows="7"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 1rem;">
+          <span>Save Hero, Terminal &amp; Metrics Settings</span> ➔
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- MODALS -->
+  <!-- ========================================================================= -->
+
+  <!-- 1. Project Modal -->
+  <div id="project-modal" class="admin-modal-overlay">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 id="modal-title">Add New Project</h3>
+        <button class="admin-modal-close" onclick="showModal('project-modal', false)">&times;</button>
+      </div>
+      <form id="project-form">
+        <input type="hidden" id="project-form-id">
+        <div class="admin-modal-body">
+          <div class="form-row">
+            <div class="form-group" style="grid-column: span 2;">
+              <label class="form-label" for="project-form-title">Project Title *</label>
+              <input type="text" id="project-form-title" class="form-input" required placeholder="e.g. Eurorisk Deep Mind">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="project-form-subtitle">Subtitle</label>
+              <input type="text" id="project-form-subtitle" class="form-input" placeholder="e.g. AI CRO Command Center">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="project-form-slug">Slug (URL identifier)</label>
+              <input type="text" id="project-form-slug" class="form-input" placeholder="auto-generated-if-empty">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="project-form-badge">Badge Label</label>
+              <input type="text" id="project-form-badge" class="form-input" placeholder="e.g. DB Hackathon 2026 Winner">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="project-form-badgeColor">Badge Color</label>
+              <select id="project-form-badgeColor" class="form-select">
+                <option value="badge-purple">Purple (AI / Winner)</option>
+                <option value="badge-blue">Blue (Cloud / Database)</option>
+                <option value="badge-emerald">Emerald (ML / Data)</option>
+                <option value="badge-amber">Amber (DevOps)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="project-form-description">Short Description *</label>
+            <textarea id="project-form-description" class="form-textarea" rows="2" required placeholder="Concise summary for cards..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="project-form-github">GitHub Repository URL</label>
+              <input type="url" id="project-form-github" class="form-input" placeholder="https://github.com/...">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="project-form-video">YouTube Embed URL</label>
+              <input type="url" id="project-form-video" class="form-input" placeholder="https://www.youtube.com/embed/...">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="project-form-demo">Live Demo URL</label>
+              <input type="url" id="project-form-demo" class="form-input" placeholder="https://...">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="project-form-weight">Display Order Weight</label>
+              <input type="number" id="project-form-weight" class="form-input" value="1" min="1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="project-form-tags">Technology Tags (Comma-separated)</label>
+            <input type="text" id="project-form-tags" class="form-input" placeholder="Python, GCP, LangGraph, Streamlit">
+          </div>
+
+          <div class="form-group">
+            <label class="form-checkbox-label">
+              <input type="checkbox" id="project-form-featured">
+              <span>Show on Homepage Featured Blueprints</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="project-form-content">Detailed Markdown Blueprint Content</label>
+            <textarea id="project-form-content" class="form-textarea code-editor" rows="6" placeholder="### Executive Summary&#10;&#10;Key architectural pillars and technical details..."></textarea>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="btn btn-outline btn-sm" onclick="showModal('project-modal', false)">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save Project Blueprint</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Experience Modal -->
+  <div id="experience-modal" class="admin-modal-overlay">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 id="exp-modal-title">Add Career Milestone</h3>
+        <button class="admin-modal-close" onclick="showModal('experience-modal', false)">&times;</button>
+      </div>
+      <form id="experience-form">
+        <input type="hidden" id="experience-form-id">
+        <div class="admin-modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="exp-company">Company Name *</label>
+              <input type="text" id="exp-company" class="form-input" required placeholder="Deutsche Bank">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="exp-role">Role Title *</label>
+              <input type="text" id="exp-role" class="form-input" required placeholder="Assistant Vice President">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="exp-rolePill">Role Pill Label</label>
+              <input type="text" id="exp-rolePill" class="form-input" placeholder="e.g. Assistant Vice President">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="exp-location">Location</label>
+              <input type="text" id="exp-location" class="form-input" placeholder="Pune, India">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="exp-startDate">Start Date</label>
+              <input type="text" id="exp-startDate" class="form-input" placeholder="July 2022">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="exp-endDate">End Date</label>
+              <input type="text" id="exp-endDate" class="form-input" placeholder="Present">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="exp-duration">Duration</label>
+              <input type="text" id="exp-duration" class="form-input" placeholder="4 yrs, 1 mo">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-checkbox-label">
+              <input type="checkbox" id="exp-isCurrent">
+              <span>Current Role (Sets End Date to "Present")</span>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="exp-logo">Logo Asset Path</label>
+              <input type="text" id="exp-logo" class="form-input" placeholder="/static/images/deutsche-bank.svg">
+            </div>
+            <div class="form-group">
+              <label class="form-checkbox-label" style="margin-top: 1.8rem;">
+                <input type="checkbox" id="exp-featured">
+                <span>Spotlight Milestone Card</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="exp-summary">Role Summary</label>
+            <textarea id="exp-summary" class="form-textarea" rows="2" placeholder="High-level responsibilities..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="exp-highlights">Key Highlights &amp; Accomplishments (One bullet per line)</label>
+            <textarea id="exp-highlights" class="form-textarea" rows="4" placeholder="Cloud & AI Engineering: Built Agentic RAG...&#10;Database Automation: Reduced turnaround time..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="exp-tags">Technology Tags (Comma-separated)</label>
+            <input type="text" id="exp-tags" class="form-input" placeholder="Oracle ExaCC, GCP, Python, Ansible">
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="btn btn-outline btn-sm" onclick="showModal('experience-modal', false)">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save Career Milestone</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Gist Modal -->
+  <div id="gist-modal" class="admin-modal-overlay">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 id="gist-modal-title">Add Technical Gist</h3>
+        <button class="admin-modal-close" onclick="showModal('gist-modal', false)">&times;</button>
+      </div>
+      <form id="gist-form">
+        <input type="hidden" id="gist-form-id">
+        <div class="admin-modal-body">
+          <div class="form-group">
+            <label class="form-label" for="gist-title">Gist Title *</label>
+            <input type="text" id="gist-title" class="form-input" required placeholder="e.g. Decode Mongo Base64 Encrypted XML">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="gist-category">Category Badge</label>
+            <input type="text" id="gist-category" class="form-input" placeholder="Database & Automation Solution">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="gist-scenario">Automation Scenario</label>
+            <textarea id="gist-scenario" class="form-textarea" rows="2" placeholder="Context or problem scenario..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="gist-challenge">Engineering Challenge</label>
+            <textarea id="gist-challenge" class="form-textarea" rows="2" placeholder="Technical hurdle solved..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="gist-embed">Gist Embed Script URL</label>
+              <input type="url" id="gist-embed" class="form-input" placeholder="https://gist.github.com/... .js">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="gist-url">Direct GitHub Gist URL</label>
+              <input type="url" id="gist-url" class="form-input" placeholder="https://gist.github.com/...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="gist-tags">Tags (Comma-separated)</label>
+            <input type="text" id="gist-tags" class="form-input" placeholder="MongoDB, Shell Script, JavaScript, BSON">
+          </div>
+
+          <div class="form-group">
+            <label class="form-checkbox-label">
+              <input type="checkbox" id="gist-featured" checked>
+              <span>Feature this Gist</span>
+            </label>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="btn btn-outline btn-sm" onclick="showModal('gist-modal', false)">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save Gist</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Achievement Modal -->
+  <div id="achievement-modal" class="admin-modal-overlay">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 id="ach-modal-title">Add Award / Milestone</h3>
+        <button class="admin-modal-close" onclick="showModal('achievement-modal', false)">&times;</button>
+      </div>
+      <form id="achievement-form">
+        <input type="hidden" id="achievement-form-id">
+        <div class="admin-modal-body">
+          <div class="form-group">
+            <label class="form-label" for="ach-title">Title *</label>
+            <input type="text" id="ach-title" class="form-input" required placeholder="e.g. DB Hackathon 2026 Winner">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ach-date">Date / Month</label>
+              <input type="text" id="ach-date" class="form-input" placeholder="July 2026">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ach-org">Organization</label>
+              <input type="text" id="ach-org" class="form-input" placeholder="Deutsche Bank">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ach-badge">Badge Accent Color</label>
+              <select id="ach-badge" class="form-select">
+                <option value="badge-purple">Purple (1st Place / Spotlight)</option>
+                <option value="badge-emerald">Emerald (Special Award / Healthcare)</option>
+                <option value="badge-blue">Blue (Platform Leadership)</option>
+                <option value="badge-amber">Amber (Recognition)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-checkbox-label" style="margin-top: 2rem;">
+                <input type="checkbox" id="ach-featured">
+                <span>Spotlight on Homepage</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="ach-description">Description</label>
+            <textarea id="ach-description" class="form-textarea" rows="2" placeholder="Brief note on recognition..."></textarea>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="btn btn-outline btn-sm" onclick="showModal('achievement-modal', false)">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save Achievement</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/static/js/main.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
