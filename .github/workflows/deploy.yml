@@ -46,10 +46,13 @@ jobs:
 
       - name: Verify dynamic CMS assets in build
         run: |
-          mkdir -p public/admin public/data public/js
+          mkdir -p public/admin public/data public/js public/static
           cp -r static/admin/* public/admin/ 2>/dev/null || true
           cp data/portfolio-data.json public/data/portfolio-data.json 2>/dev/null || true
           cp static/js/dynamic-site.js public/js/dynamic-site.js 2>/dev/null || true
+          cp -r public/css public/static/css 2>/dev/null || true
+          cp -r public/images public/static/images 2>/dev/null || true
+          cp -r public/js public/static/js 2>/dev/null || true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
