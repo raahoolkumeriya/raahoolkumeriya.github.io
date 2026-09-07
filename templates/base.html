@@ -56,6 +56,9 @@
         <li>
           <a class="nav-link" href="{{ config.extra.resume }}" target="_blank" rel="noopener noreferrer">Resume ↗</a>
         </li>
+        <li class="nav-mobile-only">
+          <a class="btn btn-primary btn-sm nav-mobile-cta" href="{{ config.extra.contact }}">Connect with Me ➔</a>
+        </li>
       </ul>
 
       <div class="nav-actions">
@@ -63,15 +66,19 @@
           <!-- Populated by main.js with Sun / Moon SVG -->
           <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <a class="btn btn-primary btn-sm" href="{{ config.extra.contact }}">
+        <a class="btn btn-primary btn-sm nav-connect-btn" href="{{ config.extra.contact }}">
           Connect
         </a>
-        <button class="btn-icon nav-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">
-          <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <button class="btn-icon nav-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg class="hamburger-icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="close-icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Backdrop Overlay -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <!-- Main Content Block -->
   <main id="main-content">

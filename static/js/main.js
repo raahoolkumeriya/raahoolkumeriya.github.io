@@ -47,31 +47,68 @@
     }
   }
 
-  // 2. Mobile Menu Toggle
+  // 2. Mobile Menu Toggle & Overlay
   function initMobileMenu() {
     const toggle = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('nav-menu');
+    const overlay = document.getElementById('nav-overlay');
     if (!toggle || !menu) return;
+
+    function closeMenu() {
+      menu.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (overlay) overlay.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+
+    function openMenu() {
+      menu.classList.add('open');
+      toggle.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      if (overlay) overlay.classList.add('active');
+      document.body.classList.add('menu-open');
+    }
 
     toggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isOpen = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
+      const isOpen = menu.classList.contains('open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    if (overlay) {
+      overlay.addEventListener('click', closeMenu);
+    }
+
+    // Close when clicking any nav item/link
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
     });
 
     // Close when clicking outside
     document.addEventListener('click', (e) => {
       if (!toggle.contains(e.target) && !menu.contains(e.target) && menu.classList.contains('open')) {
-        menu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', false);
+        closeMenu();
       }
     });
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('open')) {
-        menu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', false);
+        closeMenu();
+      }
+    });
+
+    // Close if resized to desktop viewport
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && menu.classList.contains('open')) {
+        closeMenu();
       }
     });
   }

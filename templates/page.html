@@ -26,7 +26,7 @@
       </p>
       {% endif %}
       
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color);">
+      <div class="article-meta-bar">
         <div class="tags-group">
           {% if page.extra.tags %}
             {% for tag in page.extra.tags %}
@@ -44,13 +44,13 @@
 
     <!-- YouTube Embed if present -->
     {% if page.extra.video %}
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 2.5rem; border: 1px solid var(--border-color); background: #000; box-shadow: var(--shadow-lg);">
-      <iframe src="{{ page.extra.video }}" title="{{ page.title }}" style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video-container">
+      <iframe src="{{ page.extra.video }}" title="{{ page.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     {% endif %}
 
     <!-- Markdown Content Body -->
-    <div class="card" style="padding: 2.5rem; line-height: 1.85;">
+    <div class="card article-content-card">
       {{ page.content | safe }}
     </div>
 
